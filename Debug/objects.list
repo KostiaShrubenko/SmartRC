@@ -1,3 +1,7 @@
 "CMSIS/src/system_stm32f1xx.o"
 "Core/src/main.o"
+"Core/src/stm32f1xx_it.o"
+"LowLevelDrivers/src/stm32f1xx_ll_gpio.o"
+"LowLevelDrivers/src/stm32f1xx_ll_rcc.o"
+"LowLevelDrivers/src/stm32f1xx_ll_utils.o"
 "Startup/startup_stm32f103xb.o"

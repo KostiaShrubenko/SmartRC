@@ -1,4 +1,5 @@
-Core/src/main.o: ../Core/src/main.c ../Core/inc/main.h ../Config/Config.h \
+Core/src/stm32f1xx_it.o: ../Core/src/stm32f1xx_it.c \
+ ../Core/inc/stm32f1xx_it.h ../Core/inc/main.h ../Config/Config.h \
  ../CMSIS/inc/stm32f1xx.h ../CMSIS/inc/stm32f103xb.h \
  ../CMSIS/inc/core_cm3.h ../CMSIS/inc/cmsis_version.h \
  ../CMSIS/inc/cmsis_compiler.h ../CMSIS/inc/cmsis_gcc.h \
@@ -8,6 +9,8 @@ Core/src/main.o: ../Core/src/main.c ../Core/inc/main.h ../Config/Config.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_system.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_utils.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_gpio.h
+
+../Core/inc/stm32f1xx_it.h:
 
 ../Core/inc/main.h:
 

@@ -19,5 +19,6 @@ OBJCOPY_BIN :=
 SUBDIRS := \
 CMSIS/src \
 Core/src \
+LowLevelDrivers/src \
 Startup \
 
