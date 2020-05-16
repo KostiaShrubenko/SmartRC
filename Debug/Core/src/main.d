@@ -7,7 +7,9 @@ Core/src/main.o: ../Core/src/main.c ../Core/inc/main.h ../Config/Config.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_rcc.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_system.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_utils.h \
- ../LowLevelDrivers/inc/stm32f1xx_ll_gpio.h
+ ../LowLevelDrivers/inc/stm32f1xx_ll_gpio.h \
+ ../ApplicationLayer/CapSensDriver/inc/CapSens.h \
+ ../ApplicationLayer/CapSensDriver/inc/CapSens_Config.h
 
 ../Core/inc/main.h:
 
@@ -36,3 +38,7 @@ Core/src/main.o: ../Core/src/main.c ../Core/inc/main.h ../Config/Config.h \
 ../LowLevelDrivers/inc/stm32f1xx_ll_utils.h:
 
 ../LowLevelDrivers/inc/stm32f1xx_ll_gpio.h:
+
+../ApplicationLayer/CapSensDriver/inc/CapSens.h:
+
+../ApplicationLayer/CapSensDriver/inc/CapSens_Config.h:

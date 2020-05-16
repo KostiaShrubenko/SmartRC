@@ -16,6 +16,7 @@
 #include "stm32f1xx_ll_system.h"
 #include "stm32f1xx_ll_utils.h"
 #include "stm32f1xx_ll_gpio.h"
+#include "CapSens.h"
 
 
 #define RCC_ERROR_NONE	0

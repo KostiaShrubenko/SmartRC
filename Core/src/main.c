@@ -15,11 +15,14 @@ void Init_GPIO(void);
 int main (void)
 {
  	Init_Clock();
-	Init_GPIO();
+	//Init_GPIO();
+ 	InitRoutine();
 	while (1)
 	{
-		LL_GPIO_WriteOutputPort(GPIOB, 0b0111110000000000);
-		LL_GPIO_WriteOutputPort(GPIOB, 0b0000000000000000);
+		ChargeRoutine();
+		LL_mDelay(100);
+		//LL_GPIO_WriteOutputPort(GPIOB, 0b0111110000000000);
+		//LL_GPIO_WriteOutputPort(GPIOB, 0b0000000000000000);
 	}
 	return 0;
 }
@@ -51,8 +54,8 @@ void Init_Clock(void)
 	LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
 	/* 1ms config with HSI 8MHz*/
-	LL_Init1msTick(HSI_VALUE);
-	LL_SetSystemCoreClock(8000000);
+	LL_Init1msTick(8000000);//HSI_VALUE);
+//	LL_SetSystemCoreClock(8000000);
 }
 
 /**
