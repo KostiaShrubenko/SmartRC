@@ -1,2 +1,2 @@
 CapSens.c:13:6:InitRoutine	24	static
-CapSens.c:33:6:ChargeRoutine	8	static,ignoring_inline_asm
+CapSens.c:33:6:ChargeRoutine	24	static,ignoring_inline_asm
