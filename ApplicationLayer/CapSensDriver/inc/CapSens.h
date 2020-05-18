@@ -8,8 +8,14 @@
 #ifndef CAPSENSDRIVER_INC_CAPSENS_H_
 #define CAPSENSDRIVER_INC_CAPSENS_H_
 
+#include "Config.h"
 #include "CapSens_Config.h"
-#include "main.h"
+#include "CapSens_DataTypes.h"
+#include "stm32f1xx_ll_bus.h"
+#include "stm32f1xx_ll_rcc.h"
+#include "stm32f1xx_ll_dma.h"
+#include "stm32f1xx_ll_adc.h"
+#include "stm32f1xx_ll_gpio.h"
 
 #define NOP2	__NOP(); __NOP()
 #define NOP4	NOP2; NOP2
@@ -100,8 +106,12 @@
 #define TOP_CLK_ENABLE()	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA)
 #define BOTTOM_CLK_ENABLE()	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOB)
 
+#define DMA_CHANNEL_ADC LL_DMA_CHANNEL_1
+
 void InitRoutine(void);
 void ChargeRoutine(void);
+
+void DMA_TransferComplete_Callback(void);
 
 
 

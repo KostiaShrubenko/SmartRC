@@ -8,5 +8,7 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
+#define SENSORS_AMOUNT 6U
+
 
 #endif /* CONFIG_H_ */

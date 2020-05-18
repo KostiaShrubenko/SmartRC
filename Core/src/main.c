@@ -55,7 +55,7 @@ void Init_Clock(void)
 
 	/* 1ms config with HSI 8MHz*/
 	LL_Init1msTick(8000000);//HSI_VALUE);
-//	LL_SetSystemCoreClock(8000000);
+	LL_SetSystemCoreClock(8000000);
 }
 
 /**

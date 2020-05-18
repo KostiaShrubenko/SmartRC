@@ -11,7 +11,9 @@ Core/src/stm32f1xx_it.o: ../Core/src/stm32f1xx_it.c \
  ../LowLevelDrivers/inc/stm32f1xx_ll_gpio.h \
  ../ApplicationLayer/CapSensDriver/inc/CapSens.h \
  ../ApplicationLayer/CapSensDriver/inc/CapSens_Config.h \
- ../Core/inc/main.h
+ ../ApplicationLayer/CapSensDriver/inc/CapSens_DataTypes.h \
+ ../LowLevelDrivers/inc/stm32f1xx_ll_dma.h \
+ ../LowLevelDrivers/inc/stm32f1xx_ll_adc.h ../Core/inc/stm32f1xx_it.h
 
 ../Core/inc/stm32f1xx_it.h:
 
@@ -47,4 +49,10 @@ Core/src/stm32f1xx_it.o: ../Core/src/stm32f1xx_it.c \
 
 ../ApplicationLayer/CapSensDriver/inc/CapSens_Config.h:
 
-../Core/inc/main.h:
+../ApplicationLayer/CapSensDriver/inc/CapSens_DataTypes.h:
+
+../LowLevelDrivers/inc/stm32f1xx_ll_dma.h:
+
+../LowLevelDrivers/inc/stm32f1xx_ll_adc.h:
+
+../Core/inc/stm32f1xx_it.h:
