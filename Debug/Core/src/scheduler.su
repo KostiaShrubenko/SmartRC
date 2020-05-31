@@ -1,0 +1,4 @@
+scheduler.c:28:6:vScheduler	24	static
+scheduler.c:58:6:vTaskInit	8	static
+scheduler.c:20:6:vScheduler_Init	8	static
+scheduler.c:72:6:vScheduler_SysTick_Callback	0	static

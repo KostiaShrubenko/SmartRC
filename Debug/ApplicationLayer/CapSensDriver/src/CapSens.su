@@ -1,6 +1,6 @@
 CapSens.c:45:6:ChargeRoutine	24	static,ignoring_inline_asm
-CapSens.c:78:6:DMA_Init	8	static
-CapSens.c:133:6:ADC_Init	32	static,ignoring_inline_asm
-CapSens.c:173:6:ADC_Activate	0	static,ignoring_inline_asm
+CapSens.c:74:6:DMA_Init	8	static
+CapSens.c:129:6:ADC_Init	32	static,ignoring_inline_asm
+CapSens.c:169:6:ADC_Activate	0	static,ignoring_inline_asm
 CapSens.c:21:6:InitRoutine	24	static
-CapSens.c:188:6:DMA_TransferComplete_Callback	0	static
+CapSens.c:184:6:DMA_TransferComplete_Callback	0	static

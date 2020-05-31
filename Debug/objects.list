@@ -1,6 +1,8 @@
 "ApplicationLayer/CapSensDriver/src/CapSens.o"
 "CMSIS/src/system_stm32f1xx.o"
+"Core/src/TaskManager.o"
 "Core/src/main.o"
+"Core/src/scheduler.o"
 "Core/src/stm32f1xx_it.o"
 "LowLevelDrivers/src/stm32f1xx_ll_adc.o"
 "LowLevelDrivers/src/stm32f1xx_ll_dma.o"

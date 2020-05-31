@@ -137,7 +137,7 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-	//IncrementTicks_CallBack();
+	vScheduler_SysTick_Callback();
 }
 
 /******************************************************************************/

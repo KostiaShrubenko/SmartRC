@@ -108,6 +108,10 @@
 
 #define DMA_CHANNEL_ADC LL_DMA_CHANNEL_1
 
+#define DMA_NO_TRANSFER 		0
+#define DMA_TRANSFER_FINISHED	1
+
+
 void InitRoutine(void);
 void ChargeRoutine(void);
 

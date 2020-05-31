@@ -10,8 +10,8 @@
 static LL_GPIO_InitTypeDef tConfigTOPConnection;
 static LL_GPIO_InitTypeDef tConfigBottomConnection;
 
-__IO uint16_t 				au16SensorsValue[SENSORS_AMOUNT];
-__IO DMA_TransferStatus_t	eDMA_ADCtransferStatus = DMA_TransferIsntComplete;
+__IO uint16_t 	au16SensorsValue[SENSORS_AMOUNT];
+__IO uint8_t	u8DMA_ADCtransferStatus = DMA_NO_TRANSFER;
 
 
 void DMA_Init(void);
@@ -63,10 +63,10 @@ void ChargeRoutine(void)
 	NOP4;
 
 	LL_ADC_REG_StartConversionSWStart(ADC1);
-	while (eDMA_ADCtransferStatus != DMA_TransferComplete)
+	while (u8DMA_ADCtransferStatus != DMA_TRANSFER_FINISHED)
 	{
 	}
-	eDMA_ADCtransferStatus = DMA_TransferIsntComplete;
+	u8DMA_ADCtransferStatus = DMA_NO_TRANSFER;
 	MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_OUTPUT);
 	LL_GPIO_WriteOutputPort(TOP_PORT, TOP_LOW_LEVEL);
 }
@@ -183,5 +183,5 @@ void ADC_Activate(void)
 
 void DMA_TransferComplete_Callback(void)
 {
-	eDMA_ADCtransferStatus = DMA_TransferComplete;
+	u8DMA_ADCtransferStatus = DMA_TRANSFER_FINISHED;
 }
