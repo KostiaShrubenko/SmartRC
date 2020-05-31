@@ -16,11 +16,12 @@
 
 void vTask_Init(void)
 {
+	CapSens_InitRoutine();
 }
 
 void vTask_2ms(void)
 {
-
+	CapSens_ChargeRoutine_2ms();
 }
 
 void vTask_10ms_0(void)

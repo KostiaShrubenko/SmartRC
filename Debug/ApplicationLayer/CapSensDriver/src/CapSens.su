@@ -1,6 +1,7 @@
-CapSens.c:45:6:ChargeRoutine	24	static,ignoring_inline_asm
-CapSens.c:74:6:DMA_Init	8	static
-CapSens.c:129:6:ADC_Init	32	static,ignoring_inline_asm
-CapSens.c:169:6:ADC_Activate	0	static,ignoring_inline_asm
-CapSens.c:21:6:InitRoutine	24	static
-CapSens.c:184:6:DMA_TransferComplete_Callback	0	static
+CapSens.c:46:6:CapSens_ChargeRoutine_2ms	24	static,ignoring_inline_asm
+CapSens.c:75:6:CapSens_ApiGetSensorsValue	0	static
+CapSens.c:83:6:DMA_Init	8	static
+CapSens.c:138:6:ADC_Init	32	static,ignoring_inline_asm
+CapSens.c:178:6:ADC_Activate	0	static,ignoring_inline_asm
+CapSens.c:22:6:CapSens_InitRoutine	24	static
+CapSens.c:193:6:DMA_TransferComplete_Callback	0	static

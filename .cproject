@@ -47,7 +47,7 @@
 									<listOptionValue builtIn="false" value="../LowLevelDrivers/inc"/>
 									<listOptionValue builtIn="false" value="../Config"/>
 									<listOptionValue builtIn="false" value="../ApplicationLayer/CapSensDriver/inc"/>
-									<listOptionValue builtIn="false" value="../ApplicationLayer/ADC/inc"/>
+									<listOptionValue builtIn="false" value="../ApplicationLayer/Debug/inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.277307345" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

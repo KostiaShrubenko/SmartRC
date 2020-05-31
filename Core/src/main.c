@@ -37,22 +37,3 @@ void Init_Clock(void)
 	LL_SetSystemCoreClock(HSI_VALUE);
 }
 
-/**
- * @brief Initialization of all GPIO.
- * @param None
- * @retval None
- */
-//void Init_GPIO(void)
-//{
-//	LL_GPIO_InitTypeDef tGPIO_InitStructure; /* Structure to contain GPIOs configurations.	*/
-//
-//	PORTC_CLK_ENABLE();
-//
-//	tGPIO_InitStructure.Pin = LED_PIN | SIGNAL_PIN | LL_GPIO_PIN_12 | LL_GPIO_PIN_13 | LL_GPIO_PIN_14;
-//	tGPIO_InitStructure.Mode = LL_GPIO_MODE_OUTPUT;
-//	tGPIO_InitStructure.Speed = LL_GPIO_SPEED_FREQ_LOW;
-//	tGPIO_InitStructure.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-//	tGPIO_InitStructure.Pull = LL_GPIO_PULL_DOWN;
-//
-//	LL_GPIO_Init(LED_PORT, &tGPIO_InitStructure);
-//}

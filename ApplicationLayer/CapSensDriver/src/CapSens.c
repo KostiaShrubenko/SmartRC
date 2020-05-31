@@ -6,8 +6,9 @@
  */
 
 #include "CapSens.h"
+#include "callbacks.h"
 
-static LL_GPIO_InitTypeDef tConfigTOPConnection;
+static LL_GPIO_InitTypeDef tConfigTopConnection;
 static LL_GPIO_InitTypeDef tConfigBottomConnection;
 
 __IO uint16_t 	au16SensorsValue[SENSORS_AMOUNT];
@@ -18,7 +19,7 @@ void DMA_Init(void);
 void ADC_Init(void);
 void ADC_Activate(void);
 
-void InitRoutine(void)
+void CapSens_InitRoutine(void)
 {
 	TOP_CLK_ENABLE();
 	BOTTOM_CLK_ENABLE();
@@ -30,21 +31,21 @@ void InitRoutine(void)
 	tConfigBottomConnection.Pull = LL_GPIO_PULL_DOWN;
 	LL_GPIO_Init(BOTTOM_PORT, &tConfigBottomConnection);
 
-	tConfigTOPConnection.Pin = TOP_PINS;
-	tConfigTOPConnection.Mode = LL_GPIO_MODE_OUTPUT;
-	tConfigTOPConnection.Speed = LL_GPIO_SPEED_FREQ_LOW;
-	tConfigTOPConnection.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-	tConfigTOPConnection.Pull = LL_GPIO_PULL_DOWN;
-	LL_GPIO_Init(TOP_PORT, &tConfigTOPConnection);
+	tConfigTopConnection.Pin = TOP_PINS;
+	tConfigTopConnection.Mode = LL_GPIO_MODE_OUTPUT;
+	tConfigTopConnection.Speed = LL_GPIO_SPEED_FREQ_LOW;
+	tConfigTopConnection.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
+	tConfigTopConnection.Pull = LL_GPIO_PULL_DOWN;
+	LL_GPIO_Init(TOP_PORT, &tConfigTopConnection);
 
 	DMA_Init();
 	ADC_Init();
 	ADC_Activate();
 }
 
-void ChargeRoutine(void)
+void CapSens_ChargeRoutine_2ms(void)
 {
-	for (uint16_t i = 0; i < 75; i++)
+	for (uint16_t i = 0; i < CHARGE_CYCLES; i++)
 	{
 		MODIFY_REG(BOTTOM_PORT->CRL, BOTTOM_CRL_MASK, BOTTOM_CRL_MODE_FLOAT);
 		MODIFY_REG(BOTTOM_PORT->CRH, BOTTOM_CRH_MASK, BOTTOM_CRH_MODE_FLOAT);
@@ -69,6 +70,14 @@ void ChargeRoutine(void)
 	u8DMA_ADCtransferStatus = DMA_NO_TRANSFER;
 	MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_OUTPUT);
 	LL_GPIO_WriteOutputPort(TOP_PORT, TOP_LOW_LEVEL);
+}
+
+void CapSens_ApiGetSensorsValue(uint16_t *pu16Destination)
+{
+	for (uint8_t i = 0; i < SENSORS_AMOUNT; i++)
+	{
+		pu16Destination[i] = au16SensorsValue[i];
+	}
 }
 
 void DMA_Init(void)
@@ -137,7 +146,7 @@ void ADC_Init(void)
 
 	LL_RCC_SetADCClockSource(LL_RCC_ADC_CLKSRC_PCLK2_DIV_2);
 
-	 LL_ADC_SetSequencersScanMode(ADC1, LL_ADC_SEQ_SCAN_ENABLE);
+	LL_ADC_SetSequencersScanMode(ADC1, LL_ADC_SEQ_SCAN_ENABLE);
 
     LL_ADC_REG_SetTriggerSource(ADC1, LL_ADC_REG_TRIG_SOFTWARE);
 
@@ -147,19 +156,19 @@ void ADC_Init(void)
 
     LL_ADC_REG_SetSequencerLength(ADC1, LL_ADC_REG_SEQ_SCAN_ENABLE_6RANKS);
 
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_1);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_2);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_3);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_4);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_5);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, LL_ADC_CHANNEL_6);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_2);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_3);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_4);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_5);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_6);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, LL_ADC_CHANNEL_7);
 
-    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_1, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_2, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_3, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_5, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_6, LL_ADC_SAMPLINGTIME_41CYCLES_5);
+    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_7, LL_ADC_SAMPLINGTIME_41CYCLES_5);
 
   /*## Configuration of ADC interruptions ####################################*/
   /* Enable interruption ADC group regular end of sequence conversions */

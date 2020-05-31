@@ -15,21 +15,15 @@
 #include "stm32f1xx_ll_rcc.h"
 #include "stm32f1xx_ll_system.h"
 #include "stm32f1xx_ll_utils.h"
+#include "stm32f1xx_ll_gpio.h"
 #include "stm32f1xx_it.h"
 #include "Config.h"
 
 
+#define NOP2	__NOP(); __NOP()
+#define NOP4	NOP2; NOP2
+#define NOP8	NOP4; NOP4
 
-
-
-//#define RCC_ERROR_NONE	0
-//#define RCC_ERROR 		1
-//
-//#define LED_PIN				LL_GPIO_PIN_11
-//#define LED_PORT			GPIOB
-//#define SIGNAL_PIN			LL_GPIO_PIN_10
-//#define SIGNAL_PORT			GPIOB
-//#define PORTC_CLK_ENABLE()	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOB)
 
 
 
