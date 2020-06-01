@@ -12,6 +12,7 @@ RM := rm -rf
 -include LowLevelDrivers/src/subdir.mk
 -include Core/src/subdir.mk
 -include CMSIS/src/subdir.mk
+-include ApplicationLayer/Debug/src/subdir.mk
 -include ApplicationLayer/CapSensDriver/src/subdir.mk
 -include subdir.mk
 -include objects.mk

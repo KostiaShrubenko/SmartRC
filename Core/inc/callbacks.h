@@ -10,6 +10,10 @@
 
 void vScheduler_SysTick_Callback(void);
 
-void DMA_TransferComplete_Callback(void);
+void DMA_AdcTransferComplete_Callback(void);
+
+void DMA_UsartTransmitComplete_Callback(void);
+
+void DMA_UsartReceiveComplete_Callback(void);
 
 #endif /* INC_CALLBACKS_H_ */

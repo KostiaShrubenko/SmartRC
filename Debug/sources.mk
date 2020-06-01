@@ -18,6 +18,7 @@ OBJCOPY_BIN :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 ApplicationLayer/CapSensDriver/src \
+ApplicationLayer/Debug/src \
 CMSIS/src \
 Core/src \
 LowLevelDrivers/src \

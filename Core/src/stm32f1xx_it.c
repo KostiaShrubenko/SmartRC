@@ -156,6 +156,7 @@ void ADC1_IRQHandler(void)
 {
 }
 
+
 /**
   * @brief  This function handles DMA1 interrupt request.
   * @param  None
@@ -169,16 +170,40 @@ void DMA1_Channel1_IRQHandler(void)
     /* Clear flag DMA global interrupt */
     /* (global interrupt flag: half transfer and transfer complete flags) */
     LL_DMA_ClearFlag_GI1(DMA1);
-    DMA_TransferComplete_Callback();
-  }
-
-  /* Check whether DMA transfer error caused the DMA interruption */
-  if(LL_DMA_IsActiveFlag_TE1(DMA1) == 1)
-  {
-    /* Clear flag DMA transfer error */
-    LL_DMA_ClearFlag_TE1(DMA1);
+    DMA_AdcTransferComplete_Callback();
   }
 }
+
+/**
+  * @brief  This function handles DMA1 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA1_Channel5_IRQHandler(void)
+{
+	if(LL_DMA_IsActiveFlag_TC5(DMA1))
+	{
+		LL_DMA_ClearFlag_GI5(DMA1);
+		/* Call function Reception complete Callback */
+		DMA_UsartReceiveComplete_Callback();
+	}
+}
+
+/**
+  * @brief  This function handles DMA1 interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA1_Channel4_IRQHandler(void)
+{
+	if(LL_DMA_IsActiveFlag_TC4(DMA1))
+	{
+		LL_DMA_ClearFlag_GI4(DMA1);
+		/* Call function Transmission complete Callback */
+		DMA_UsartTransmitComplete_Callback();
+	}
+}
+
 
 /**
   * @}

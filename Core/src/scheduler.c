@@ -16,7 +16,7 @@ __IO uint8_t u8SystemCounter;
 task_t atTasks[TASKS_AMOUNT];
 
 /*	vTaskInit -- is auxiliary function to initialize "atTasks" for one task per call.					*/
-void vTaskInit(void *pvRoutine, uint8_t u8Period, uint8_t u8Offset);
+static void vTaskInit(void *pvRoutine, uint8_t u8Period, uint8_t u8Offset);
 
 
 void vScheduler_Init(void)
@@ -62,7 +62,7 @@ void vScheduler(void)
 	}
 }
 
-void vTaskInit(void *pvRoutine, uint8_t u8Period, uint8_t u8Offset)
+static void vTaskInit(void *pvRoutine, uint8_t u8Period, uint8_t u8Offset)
 {
 	static uint8_t u8Index = 0;
 

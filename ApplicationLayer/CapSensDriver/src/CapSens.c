@@ -15,9 +15,9 @@ __IO uint16_t 	au16SensorsValue[SENSORS_AMOUNT];
 __IO uint8_t	u8DMA_ADCtransferStatus = DMA_NO_TRANSFER;
 
 
-void DMA_Init(void);
-void ADC_Init(void);
-void ADC_Activate(void);
+static void DMA_Init(void);
+static void ADC_Init(void);
+static void ADC_Activate(void);
 
 void CapSens_InitRoutine(void)
 {
@@ -80,11 +80,11 @@ void CapSens_ApiGetSensorsValue(uint16_t *pu16Destination)
 	}
 }
 
-void DMA_Init(void)
+static void DMA_Init(void)
 {
 	/*## Configuration of NVIC #################################################*/
 	/* Configure NVIC to enable DMA interruptions */
-	NVIC_SetPriority(DMA1_Channel1_IRQn, 1);  /* DMA IRQ lower priority than ADC IRQ */
+	NVIC_SetPriority(DMA1_Channel1_IRQn, NVIC_CAP_DMA_PRIORITY);  /* DMA IRQ lower priority than ADC IRQ */
 	NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 
 	/*## Configuration of DMA ##################################################*/
@@ -123,23 +123,21 @@ void DMA_Init(void)
 						 (uint32_t)SENSORS_AMOUNT);
 
 	/* Enable DMA transfer interruption: transfer complete */
-	LL_DMA_EnableIT_TC(DMA1,
-					 DMA_CHANNEL_ADC);
+	LL_DMA_EnableIT_TC(DMA1, DMA_CHANNEL_ADC);
 
 	/* Enable DMA transfer interruption: transfer error */
-	LL_DMA_EnableIT_TE(DMA1,
-						DMA_CHANNEL_ADC);
+//	LL_DMA_EnableIT_TE(DMA1,
+//						DMA_CHANNEL_ADC);
 	/*## Activation of DMA #####################################################*/
 	/* Enable the DMA transfer */
-	LL_DMA_EnableChannel(DMA1,
-	                     DMA_CHANNEL_ADC);
+	LL_DMA_EnableChannel(DMA1, DMA_CHANNEL_ADC);
 }
 
-void ADC_Init(void)
+static void ADC_Init(void)
 {
 	MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_ANALOG);
 
-	NVIC_SetPriority(ADC1_IRQn, 0);
+	NVIC_SetPriority(ADC1_IRQn, NVIC_CAP_ADC_PRIORITY);
 	NVIC_EnableIRQ(ADC1_IRQn);
 
 	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1);
@@ -154,16 +152,14 @@ void ADC_Init(void)
 
     LL_ADC_REG_SetDMATransfer(ADC1, LL_ADC_REG_DMA_TRANSFER_UNLIMITED);
 
-    LL_ADC_REG_SetSequencerLength(ADC1, LL_ADC_REG_SEQ_SCAN_ENABLE_6RANKS);
+    LL_ADC_REG_SetSequencerLength(ADC1, LL_ADC_REG_SEQ_SCAN_ENABLE_5RANKS);
 
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_2);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_3);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_4);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_5);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_6);
-    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_6, LL_ADC_CHANNEL_7);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_3);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_4);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_5);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_6);
+    LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_7);
 
-    LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_2, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_3, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_5, LL_ADC_SAMPLINGTIME_41CYCLES_5);
@@ -175,7 +171,7 @@ void ADC_Init(void)
   LL_ADC_EnableIT_EOS(ADC1);
 }
 
-void ADC_Activate(void)
+static void ADC_Activate(void)
 {
     /* Enable ADC */
     LL_ADC_Enable(ADC1);
@@ -190,7 +186,7 @@ void ADC_Activate(void)
     };
 }
 
-void DMA_TransferComplete_Callback(void)
+void DMA_AdcTransferComplete_Callback(void)
 {
 	u8DMA_ADCtransferStatus = DMA_TRANSFER_FINISHED;
 }

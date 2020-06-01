@@ -5,23 +5,23 @@
  *      Author: 1311985
  */
 
-#include "stm32f1xx.h"
-#include "stm32f1xx_ll_bus.h"
-#include "stm32f1xx_ll_rcc.h"
-#include "stm32f1xx_ll_system.h"
-#include "stm32f1xx_ll_utils.h"
-#include "stm32f1xx_ll_gpio.h"
+#include "main.h"
 #include "scheduler.h"
+
+#include "debug.h"
+#include "CapSens.h"
 
 
 void vTask_Init(void)
 {
 	CapSens_InitRoutine();
+	Debug_Init();
 }
 
 void vTask_2ms(void)
 {
 	CapSens_ChargeRoutine_2ms();
+	Debug_Routine_2ms();
 }
 
 void vTask_10ms_0(void)
