@@ -1,5 +1,5 @@
-TaskManager.c:15:6:vTask_Init	8	static
-TaskManager.c:21:6:vTask_2ms	8	static
-TaskManager.c:27:6:vTask_10ms_0	0	static
-TaskManager.c:32:6:vTask_10ms_1	0	static
-TaskManager.c:37:6:vTask_20ms	0	static
+TaskManager.c:16:6:vTask_Init	24	static,ignoring_inline_asm
+TaskManager.c:25:6:vTask_2ms	8	static
+TaskManager.c:34:6:vTask_10ms_0	0	static
+TaskManager.c:39:6:vTask_10ms_1	0	static
+TaskManager.c:44:6:vTask_20ms	0	static

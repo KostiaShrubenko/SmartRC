@@ -12,6 +12,7 @@
 #include "stm32f1xx_ll_usart.h"
 #include "stm32f1xx_ll_dma.h"
 #include "CapSens_Api.h"
+#include "SensorProcessing_Api.h"
 #include "string.h"
 
 #define USART_DEBUG_INSTANCE         USART1

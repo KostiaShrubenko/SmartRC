@@ -7,8 +7,8 @@
 #include "debug.h"
 #include "callbacks.h"
 
-uint16_t au16TxBuffer[TX_BUFFER_SIZE];
-uint8_t  au8RxBuffer[RX_BUFFER_SIZE];
+int16_t ai16TxBuffer[TX_BUFFER_SIZE];
+uint8_t au8RxBuffer[RX_BUFFER_SIZE];
 
 static void USART_Init(void);
 static void DMA_Init(void);
@@ -22,8 +22,10 @@ void Debug_Init(void)
 
 void Debug_Routine_2ms(void)
 {
-	CapSens_ApiGetSensorsValue(au16TxBuffer);
-	BufferTransmit(2);
+	//CapSens_ApiGetSensorsValue(au16TxBuffer);
+	//SensorProcessing_ApiGetDeltas(ai16TxBuffer);
+	SensorProcessing_ApiGetSensorValues(ai16TxBuffer, 3);
+	BufferTransmit(6);
 }
 
 static void USART_Init(void)
@@ -78,7 +80,7 @@ static void DMA_Init(void)
 	                      LL_DMA_PDATAALIGN_BYTE            |
 	                      LL_DMA_MDATAALIGN_BYTE);
 	LL_DMA_ConfigAddresses(DMA1, DMA_TX_CHANNEL,
-	                       (uint32_t)&au16TxBuffer[3],
+	                       (uint32_t)ai16TxBuffer,
 	                       LL_USART_DMA_GetRegAddr(USART_DEBUG_INSTANCE),
 	                       LL_DMA_GetDataTransferDirection(DMA1, DMA_TX_CHANNEL));
 	//DMA_SET_DATALENGTH_TRANSMIT(SENSORS_AMOUNT * 2);

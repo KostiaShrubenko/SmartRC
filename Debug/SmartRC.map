@@ -15,10 +15,10 @@ Allocating common symbols
 Common symbol       size              file
 
 u8SystemCounter     0x1               Core/src/scheduler.o
+ai16TxBuffer        0x28              ApplicationLayer/Debug/src/debug.o
 atTasks             0x20              Core/src/scheduler.o
 au8RxBuffer         0x14              ApplicationLayer/Debug/src/debug.o
 au16SensorsValue    0xa               ApplicationLayer/CapSensDriver/src/CapSens.o
-au16TxBuffer        0x28              ApplicationLayer/Debug/src/debug.o
 
 Discarded input sections
 
@@ -126,6 +126,58 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x287 ApplicationLayer/Debug/src/debug.o
  .debug_macro   0x0000000000000000       0x40 ApplicationLayer/Debug/src/debug.o
  .debug_macro   0x0000000000000000       0x16 ApplicationLayer/Debug/src/debug.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .group         0x0000000000000000        0xc ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .text          0x0000000000000000        0x0 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .data          0x0000000000000000        0x0 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss           0x0000000000000000        0x0 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .text.SensorProcessing_ApiGetDeltas
+                0x0000000000000000       0x1c ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0xa66 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x2e ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x22 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x22 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x8e ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x51 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0xef ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x6a ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0x1df ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x1c ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x22 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0xc3 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0xd23 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000     0xe09e ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x43 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0xd7 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0x2d6 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x74 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x2a ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0x22a ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000      0x287 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x40 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x0000000000000000       0x16 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
  .group         0x0000000000000000        0xc CMSIS/src/system_stm32f1xx.o
  .group         0x0000000000000000        0xc CMSIS/src/system_stm32f1xx.o
  .group         0x0000000000000000        0xc CMSIS/src/system_stm32f1xx.o
@@ -165,6 +217,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0xd23 CMSIS/src/system_stm32f1xx.o
  .debug_macro   0x0000000000000000     0xe09e CMSIS/src/system_stm32f1xx.o
  .debug_macro   0x0000000000000000       0x43 CMSIS/src/system_stm32f1xx.o
+ .group         0x0000000000000000        0xc Core/src/TaskManager.o
  .group         0x0000000000000000        0xc Core/src/TaskManager.o
  .group         0x0000000000000000        0xc Core/src/TaskManager.o
  .group         0x0000000000000000        0xc Core/src/TaskManager.o
@@ -795,6 +848,7 @@ LOAD c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o
 LOAD ApplicationLayer/CapSensDriver/src/CapSens.o
 LOAD ApplicationLayer/Debug/src/debug.o
+LOAD ApplicationLayer/SensorProcessing/src/SensorProcessing.o
 LOAD CMSIS/src/system_stm32f1xx.o
 LOAD Core/src/TaskManager.o
 LOAD Core/src/main.o
@@ -838,7 +892,7 @@ LOAD c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000000                g_pfnVectors
                 0x000000000800010c                . = ALIGN (0x4)
 
-.text           0x000000000800010c      0xb20
+.text           0x000000000800010c      0xcf8
                 0x000000000800010c                . = ALIGN (0x4)
  *(.text)
  .text          0x000000000800010c       0x40 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
@@ -859,276 +913,304 @@ LOAD c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x00000000080005a4      0x25c ApplicationLayer/Debug/src/debug.o
                 0x00000000080005a4                Debug_Init
  .text.Debug_Routine_2ms
-                0x0000000008000800       0x28 ApplicationLayer/Debug/src/debug.o
+                0x0000000008000800       0x2c ApplicationLayer/Debug/src/debug.o
                 0x0000000008000800                Debug_Routine_2ms
  .text.DMA_UsartTransmitComplete_Callback
-                0x0000000008000828       0x10 ApplicationLayer/Debug/src/debug.o
-                0x0000000008000828                DMA_UsartTransmitComplete_Callback
+                0x000000000800082c       0x10 ApplicationLayer/Debug/src/debug.o
+                0x000000000800082c                DMA_UsartTransmitComplete_Callback
  .text.DMA_UsartReceiveComplete_Callback
-                0x0000000008000838       0x10 ApplicationLayer/Debug/src/debug.o
-                0x0000000008000838                DMA_UsartReceiveComplete_Callback
+                0x000000000800083c       0x10 ApplicationLayer/Debug/src/debug.o
+                0x000000000800083c                DMA_UsartReceiveComplete_Callback
+ .text.SensorProcessing_Routine_2ms
+                0x000000000800084c      0x12c ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+                0x000000000800084c                SensorProcessing_Routine_2ms
+ .text.SensorProcessing_ApiGetAllSensorValues
+                0x0000000008000978       0x24 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+                0x0000000008000978                SensorProcessing_ApiGetAllSensorValues
  .text.SystemInit
-                0x0000000008000848       0x4c CMSIS/src/system_stm32f1xx.o
-                0x0000000008000848                SystemInit
+                0x000000000800099c       0x4c CMSIS/src/system_stm32f1xx.o
+                0x000000000800099c                SystemInit
  .text.vTask_Init
-                0x0000000008000894        0xc Core/src/TaskManager.o
-                0x0000000008000894                vTask_Init
+                0x00000000080009e8       0x74 Core/src/TaskManager.o
+                0x00000000080009e8                vTask_Init
  .text.vTask_2ms
-                0x00000000080008a0        0xc Core/src/TaskManager.o
-                0x00000000080008a0                vTask_2ms
+                0x0000000008000a5c       0x28 Core/src/TaskManager.o
+                0x0000000008000a5c                vTask_2ms
  .text.vTask_10ms_0
-                0x00000000080008ac        0x2 Core/src/TaskManager.o
-                0x00000000080008ac                vTask_10ms_0
+                0x0000000008000a84        0x2 Core/src/TaskManager.o
+                0x0000000008000a84                vTask_10ms_0
  .text.vTask_10ms_1
-                0x00000000080008ae        0x2 Core/src/TaskManager.o
-                0x00000000080008ae                vTask_10ms_1
+                0x0000000008000a86        0x2 Core/src/TaskManager.o
+                0x0000000008000a86                vTask_10ms_1
  .text.vTask_20ms
-                0x00000000080008b0        0x2 Core/src/TaskManager.o
-                0x00000000080008b0                vTask_20ms
- *fill*         0x00000000080008b2        0x2 
+                0x0000000008000a88        0x2 Core/src/TaskManager.o
+                0x0000000008000a88                vTask_20ms
+ *fill*         0x0000000008000a8a        0x2 
  .text.Init_Clock
-                0x00000000080008b4       0x40 Core/src/main.o
-                0x00000000080008b4                Init_Clock
- .text.main     0x00000000080008f4       0x12 Core/src/main.o
-                0x00000000080008f4                main
- *fill*         0x0000000008000906        0x2 
+                0x0000000008000a8c       0x40 Core/src/main.o
+                0x0000000008000a8c                Init_Clock
+ .text.main     0x0000000008000acc       0x12 Core/src/main.o
+                0x0000000008000acc                main
+ *fill*         0x0000000008000ade        0x2 
  .text.vTaskInit
-                0x0000000008000908       0x34 Core/src/scheduler.o
+                0x0000000008000ae0       0x34 Core/src/scheduler.o
  .text.vScheduler_Init
-                0x000000000800093c       0x3c Core/src/scheduler.o
-                0x000000000800093c                vScheduler_Init
+                0x0000000008000b14       0x3c Core/src/scheduler.o
+                0x0000000008000b14                vScheduler_Init
  .text.vScheduler
-                0x0000000008000978       0x6c Core/src/scheduler.o
-                0x0000000008000978                vScheduler
+                0x0000000008000b50       0x6c Core/src/scheduler.o
+                0x0000000008000b50                vScheduler
  .text.vScheduler_SysTick_Callback
-                0x00000000080009e4       0x10 Core/src/scheduler.o
-                0x00000000080009e4                vScheduler_SysTick_Callback
+                0x0000000008000bbc       0x10 Core/src/scheduler.o
+                0x0000000008000bbc                vScheduler_SysTick_Callback
  .text.NMI_Handler
-                0x00000000080009f4        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009f4                NMI_Handler
+                0x0000000008000bcc        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bcc                NMI_Handler
  .text.HardFault_Handler
-                0x00000000080009f6        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009f6                HardFault_Handler
+                0x0000000008000bce        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bce                HardFault_Handler
  .text.MemManage_Handler
-                0x00000000080009f8        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009f8                MemManage_Handler
+                0x0000000008000bd0        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bd0                MemManage_Handler
  .text.BusFault_Handler
-                0x00000000080009fa        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009fa                BusFault_Handler
+                0x0000000008000bd2        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bd2                BusFault_Handler
  .text.UsageFault_Handler
-                0x00000000080009fc        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009fc                UsageFault_Handler
+                0x0000000008000bd4        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bd4                UsageFault_Handler
  .text.SVC_Handler
-                0x00000000080009fe        0x2 Core/src/stm32f1xx_it.o
-                0x00000000080009fe                SVC_Handler
+                0x0000000008000bd6        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bd6                SVC_Handler
  .text.DebugMon_Handler
-                0x0000000008000a00        0x2 Core/src/stm32f1xx_it.o
-                0x0000000008000a00                DebugMon_Handler
+                0x0000000008000bd8        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bd8                DebugMon_Handler
  .text.PendSV_Handler
-                0x0000000008000a02        0x2 Core/src/stm32f1xx_it.o
-                0x0000000008000a02                PendSV_Handler
+                0x0000000008000bda        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000bda                PendSV_Handler
  .text.SysTick_Handler
-                0x0000000008000a04        0x8 Core/src/stm32f1xx_it.o
-                0x0000000008000a04                SysTick_Handler
+                0x0000000008000bdc        0x8 Core/src/stm32f1xx_it.o
+                0x0000000008000bdc                SysTick_Handler
  .text.ADC1_2_IRQHandler
-                0x0000000008000a0c        0x2 Core/src/stm32f1xx_it.o
-                0x0000000008000a0c                ADC1_2_IRQHandler
- *fill*         0x0000000008000a0e        0x2 
+                0x0000000008000be4        0x2 Core/src/stm32f1xx_it.o
+                0x0000000008000be4                ADC1_2_IRQHandler
+ *fill*         0x0000000008000be6        0x2 
  .text.DMA1_Channel1_IRQHandler
-                0x0000000008000a10       0x20 Core/src/stm32f1xx_it.o
-                0x0000000008000a10                DMA1_Channel1_IRQHandler
+                0x0000000008000be8       0x20 Core/src/stm32f1xx_it.o
+                0x0000000008000be8                DMA1_Channel1_IRQHandler
  .text.DMA1_Channel5_IRQHandler
-                0x0000000008000a30       0x20 Core/src/stm32f1xx_it.o
-                0x0000000008000a30                DMA1_Channel5_IRQHandler
+                0x0000000008000c08       0x20 Core/src/stm32f1xx_it.o
+                0x0000000008000c08                DMA1_Channel5_IRQHandler
  .text.DMA1_Channel4_IRQHandler
-                0x0000000008000a50       0x20 Core/src/stm32f1xx_it.o
-                0x0000000008000a50                DMA1_Channel4_IRQHandler
+                0x0000000008000c28       0x20 Core/src/stm32f1xx_it.o
+                0x0000000008000c28                DMA1_Channel4_IRQHandler
  .text.LL_GPIO_Init
-                0x0000000008000a70      0x102 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
-                0x0000000008000a70                LL_GPIO_Init
- *fill*         0x0000000008000b72        0x2 
+                0x0000000008000c48      0x102 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+                0x0000000008000c48                LL_GPIO_Init
+ *fill*         0x0000000008000d4a        0x2 
  .text.LL_SetSystemCoreClock
-                0x0000000008000b74        0xc LowLevelDrivers/src/stm32f1xx_ll_utils.o
-                0x0000000008000b74                LL_SetSystemCoreClock
+                0x0000000008000d4c        0xc LowLevelDrivers/src/stm32f1xx_ll_utils.o
+                0x0000000008000d4c                LL_SetSystemCoreClock
  .text.Reset_Handler
-                0x0000000008000b80       0x48 Startup/startup_stm32f103xb.o
-                0x0000000008000b80                Reset_Handler
+                0x0000000008000d58       0x48 Startup/startup_stm32f103xb.o
+                0x0000000008000d58                Reset_Handler
  .text.Default_Handler
-                0x0000000008000bc8        0x2 Startup/startup_stm32f103xb.o
-                0x0000000008000bc8                RTC_Alarm_IRQHandler
-                0x0000000008000bc8                EXTI2_IRQHandler
-                0x0000000008000bc8                TIM1_CC_IRQHandler
-                0x0000000008000bc8                PVD_IRQHandler
-                0x0000000008000bc8                EXTI3_IRQHandler
-                0x0000000008000bc8                EXTI0_IRQHandler
-                0x0000000008000bc8                I2C2_EV_IRQHandler
-                0x0000000008000bc8                SPI1_IRQHandler
-                0x0000000008000bc8                TAMPER_IRQHandler
-                0x0000000008000bc8                USART3_IRQHandler
-                0x0000000008000bc8                RTC_IRQHandler
-                0x0000000008000bc8                DMA1_Channel7_IRQHandler
-                0x0000000008000bc8                CAN1_RX1_IRQHandler
-                0x0000000008000bc8                TIM4_IRQHandler
-                0x0000000008000bc8                I2C1_EV_IRQHandler
-                0x0000000008000bc8                DMA1_Channel6_IRQHandler
-                0x0000000008000bc8                TIM3_IRQHandler
-                0x0000000008000bc8                RCC_IRQHandler
-                0x0000000008000bc8                TIM1_TRG_COM_IRQHandler
-                0x0000000008000bc8                Default_Handler
-                0x0000000008000bc8                EXTI15_10_IRQHandler
-                0x0000000008000bc8                EXTI9_5_IRQHandler
-                0x0000000008000bc8                SPI2_IRQHandler
-                0x0000000008000bc8                EXTI4_IRQHandler
-                0x0000000008000bc8                USB_LP_CAN1_RX0_IRQHandler
-                0x0000000008000bc8                USB_HP_CAN1_TX_IRQHandler
-                0x0000000008000bc8                DMA1_Channel3_IRQHandler
-                0x0000000008000bc8                TIM1_UP_IRQHandler
-                0x0000000008000bc8                WWDG_IRQHandler
-                0x0000000008000bc8                TIM2_IRQHandler
-                0x0000000008000bc8                TIM1_BRK_IRQHandler
-                0x0000000008000bc8                EXTI1_IRQHandler
-                0x0000000008000bc8                USART2_IRQHandler
-                0x0000000008000bc8                I2C2_ER_IRQHandler
-                0x0000000008000bc8                DMA1_Channel2_IRQHandler
-                0x0000000008000bc8                CAN1_SCE_IRQHandler
-                0x0000000008000bc8                FLASH_IRQHandler
-                0x0000000008000bc8                USART1_IRQHandler
-                0x0000000008000bc8                I2C1_ER_IRQHandler
-                0x0000000008000bc8                USBWakeUp_IRQHandler
- *fill*         0x0000000008000bca        0x2 
+                0x0000000008000da0        0x2 Startup/startup_stm32f103xb.o
+                0x0000000008000da0                RTC_Alarm_IRQHandler
+                0x0000000008000da0                EXTI2_IRQHandler
+                0x0000000008000da0                TIM1_CC_IRQHandler
+                0x0000000008000da0                PVD_IRQHandler
+                0x0000000008000da0                EXTI3_IRQHandler
+                0x0000000008000da0                EXTI0_IRQHandler
+                0x0000000008000da0                I2C2_EV_IRQHandler
+                0x0000000008000da0                SPI1_IRQHandler
+                0x0000000008000da0                TAMPER_IRQHandler
+                0x0000000008000da0                USART3_IRQHandler
+                0x0000000008000da0                RTC_IRQHandler
+                0x0000000008000da0                DMA1_Channel7_IRQHandler
+                0x0000000008000da0                CAN1_RX1_IRQHandler
+                0x0000000008000da0                TIM4_IRQHandler
+                0x0000000008000da0                I2C1_EV_IRQHandler
+                0x0000000008000da0                DMA1_Channel6_IRQHandler
+                0x0000000008000da0                TIM3_IRQHandler
+                0x0000000008000da0                RCC_IRQHandler
+                0x0000000008000da0                TIM1_TRG_COM_IRQHandler
+                0x0000000008000da0                Default_Handler
+                0x0000000008000da0                EXTI15_10_IRQHandler
+                0x0000000008000da0                EXTI9_5_IRQHandler
+                0x0000000008000da0                SPI2_IRQHandler
+                0x0000000008000da0                EXTI4_IRQHandler
+                0x0000000008000da0                USB_LP_CAN1_RX0_IRQHandler
+                0x0000000008000da0                USB_HP_CAN1_TX_IRQHandler
+                0x0000000008000da0                DMA1_Channel3_IRQHandler
+                0x0000000008000da0                TIM1_UP_IRQHandler
+                0x0000000008000da0                WWDG_IRQHandler
+                0x0000000008000da0                TIM2_IRQHandler
+                0x0000000008000da0                TIM1_BRK_IRQHandler
+                0x0000000008000da0                EXTI1_IRQHandler
+                0x0000000008000da0                USART2_IRQHandler
+                0x0000000008000da0                I2C2_ER_IRQHandler
+                0x0000000008000da0                DMA1_Channel2_IRQHandler
+                0x0000000008000da0                CAN1_SCE_IRQHandler
+                0x0000000008000da0                FLASH_IRQHandler
+                0x0000000008000da0                USART1_IRQHandler
+                0x0000000008000da0                I2C1_ER_IRQHandler
+                0x0000000008000da0                USBWakeUp_IRQHandler
+ *fill*         0x0000000008000da2        0x2 
  .text.__libc_init_array
-                0x0000000008000bcc       0x48 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
-                0x0000000008000bcc                __libc_init_array
+                0x0000000008000da4       0x48 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+                0x0000000008000da4                __libc_init_array
  *(.glue_7)
- .glue_7        0x0000000008000c14        0x0 linker stubs
+ .glue_7        0x0000000008000dec        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008000c14        0x0 linker stubs
+ .glue_7t       0x0000000008000dec        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008000c14        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x0000000008000dec        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x0000000008000c14        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0000000008000c14                _init
- .init          0x0000000008000c18        0x8 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x0000000008000dec        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008000dec                _init
+ .init          0x0000000008000df0        0x8 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x0000000008000c20        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0000000008000c20                _fini
- .fini          0x0000000008000c24        0x8 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x0000000008000c2c                . = ALIGN (0x4)
-                0x0000000008000c2c                _etext = .
+ .fini          0x0000000008000df8        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008000df8                _fini
+ .fini          0x0000000008000dfc        0x8 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0000000008000e04                . = ALIGN (0x4)
+                0x0000000008000e04                _etext = .
 
-.vfp11_veneer   0x0000000008000c2c        0x0
- .vfp11_veneer  0x0000000008000c2c        0x0 linker stubs
+.vfp11_veneer   0x0000000008000e04        0x0
+ .vfp11_veneer  0x0000000008000e04        0x0 linker stubs
 
-.v4_bx          0x0000000008000c2c        0x0
- .v4_bx         0x0000000008000c2c        0x0 linker stubs
+.v4_bx          0x0000000008000e04        0x0
+ .v4_bx         0x0000000008000e04        0x0 linker stubs
 
-.iplt           0x0000000008000c2c        0x0
- .iplt          0x0000000008000c2c        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x0000000008000e04        0x0
+ .iplt          0x0000000008000e04        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rel.dyn        0x0000000008000c2c        0x0
- .rel.iplt      0x0000000008000c2c        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x0000000008000e04        0x0
+ .rel.iplt      0x0000000008000e04        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x0000000008000c2c        0x0
-                0x0000000008000c2c                . = ALIGN (0x4)
+.rodata         0x0000000008000e04        0x0
+                0x0000000008000e04                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x0000000008000c2c                . = ALIGN (0x4)
+                0x0000000008000e04                . = ALIGN (0x4)
 
-.ARM.extab      0x0000000008000c2c        0x0
-                0x0000000008000c2c                . = ALIGN (0x4)
+.ARM.extab      0x0000000008000e04        0x0
+                0x0000000008000e04                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008000c2c                . = ALIGN (0x4)
+                0x0000000008000e04                . = ALIGN (0x4)
 
-.ARM            0x0000000008000c2c        0x0
-                0x0000000008000c2c                . = ALIGN (0x4)
-                0x0000000008000c2c                __exidx_start = .
+.ARM            0x0000000008000e04        0x0
+                0x0000000008000e04                . = ALIGN (0x4)
+                0x0000000008000e04                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008000c2c                __exidx_end = .
-                0x0000000008000c2c                . = ALIGN (0x4)
+                0x0000000008000e04                __exidx_end = .
+                0x0000000008000e04                . = ALIGN (0x4)
 
-.preinit_array  0x0000000008000c2c        0x0
-                0x0000000008000c2c                . = ALIGN (0x4)
-                0x0000000008000c2c                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008000e04        0x0
+                0x0000000008000e04                . = ALIGN (0x4)
+                0x0000000008000e04                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008000c2c                PROVIDE (__preinit_array_end = .)
-                0x0000000008000c2c                . = ALIGN (0x4)
+                0x0000000008000e04                PROVIDE (__preinit_array_end = .)
+                0x0000000008000e04                . = ALIGN (0x4)
 
-.init_array     0x0000000008000c2c        0x4
-                0x0000000008000c2c                . = ALIGN (0x4)
-                0x0000000008000c2c                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008000e04        0x4
+                0x0000000008000e04                . = ALIGN (0x4)
+                0x0000000008000e04                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008000c2c        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000008000c30                PROVIDE (__init_array_end = .)
-                0x0000000008000c30                . = ALIGN (0x4)
+ .init_array    0x0000000008000e04        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x0000000008000e08                PROVIDE (__init_array_end = .)
+                0x0000000008000e08                . = ALIGN (0x4)
 
-.fini_array     0x0000000008000c30        0x4
-                0x0000000008000c30                . = ALIGN (0x4)
+.fini_array     0x0000000008000e08        0x4
+                0x0000000008000e08                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008000c30        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x0000000008000e08        0x4 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008000c34                . = ALIGN (0x4)
-                0x0000000008000c34                _sidata = LOADADDR (.data)
+                0x0000000008000e0c                . = ALIGN (0x4)
+                0x0000000008000e0c                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x4 load address 0x0000000008000c34
+.data           0x0000000020000000        0x8 load address 0x0000000008000e0c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
  *(.data*)
+ .data.u8CalibrationCyclesCounter
+                0x0000000020000000        0x1 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ *fill*         0x0000000020000001        0x3 
  .data.SystemCoreClock
-                0x0000000020000000        0x4 CMSIS/src/system_stm32f1xx.o
-                0x0000000020000000                SystemCoreClock
-                0x0000000020000004                . = ALIGN (0x4)
-                0x0000000020000004                _edata = .
+                0x0000000020000004        0x4 CMSIS/src/system_stm32f1xx.o
+                0x0000000020000004                SystemCoreClock
+                0x0000000020000008                . = ALIGN (0x4)
+                0x0000000020000008                _edata = .
 
-.igot.plt       0x0000000020000004        0x0 load address 0x0000000008000c38
- .igot.plt      0x0000000020000004        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000020000004                . = ALIGN (0x4)
+.igot.plt       0x0000000020000008        0x0 load address 0x0000000008000e14
+ .igot.plt      0x0000000020000008        0x0 c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x0000000020000008                . = ALIGN (0x4)
 
-.bss            0x0000000020000004       0xb4 load address 0x0000000008000c38
-                0x0000000020000004                _sbss = .
-                0x0000000020000004                __bss_start__ = _sbss
+.bss            0x0000000020000008      0x190 load address 0x0000000008000e14
+                0x0000000020000008                _sbss = .
+                0x0000000020000008                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000004       0x1c c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .bss           0x0000000020000008       0x1c c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.bss*)
  .bss.tConfigBottomConnection
-                0x0000000020000020       0x14 ApplicationLayer/CapSensDriver/src/CapSens.o
+                0x0000000020000024       0x14 ApplicationLayer/CapSensDriver/src/CapSens.o
  .bss.tConfigTopConnection
-                0x0000000020000034       0x14 ApplicationLayer/CapSensDriver/src/CapSens.o
+                0x0000000020000038       0x14 ApplicationLayer/CapSensDriver/src/CapSens.o
  .bss.u8DMA_ADCtransferStatus
-                0x0000000020000048        0x1 ApplicationLayer/CapSensDriver/src/CapSens.o
-                0x0000000020000048                u8DMA_ADCtransferStatus
+                0x000000002000004c        0x1 ApplicationLayer/CapSensDriver/src/CapSens.o
+                0x000000002000004c                u8DMA_ADCtransferStatus
+ *fill*         0x000000002000004d        0x3 
+ .bss.LastFilteredValues.6017
+                0x0000000020000050       0x1e ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ *fill*         0x000000002000006e        0x2 
+ .bss.ai16FilterBuffer.5998
+                0x0000000020000070       0x64 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss.ai32BufferSum.5999
+                0x00000000200000d4       0x14 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss.atSensors
+                0x00000000200000e8       0x28 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss.au16RawValues
+                0x0000000020000110        0xa ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ *fill*         0x000000002000011a        0x2 
+ .bss.u16Offsets
+                0x000000002000011c        0xa ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss.u8IsBufferFilled.6001
+                0x0000000020000126        0x1 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .bss.u8PositionInBuffer.6000
+                0x0000000020000127        0x1 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
  .bss.u8Index.5057
-                0x0000000020000049        0x1 Core/src/scheduler.o
+                0x0000000020000128        0x1 Core/src/scheduler.o
  .bss.u8LastCounterValue.5038
-                0x000000002000004a        0x1 Core/src/scheduler.o
+                0x0000000020000129        0x1 Core/src/scheduler.o
  *(COMMON)
- *fill*         0x000000002000004b        0x1 
- COMMON         0x000000002000004c        0xa ApplicationLayer/CapSensDriver/src/CapSens.o
-                0x000000002000004c                au16SensorsValue
- *fill*         0x0000000020000056        0x2 
- COMMON         0x0000000020000058       0x3c ApplicationLayer/Debug/src/debug.o
-                0x0000000020000058                au8RxBuffer
-                0x000000002000006c                au16TxBuffer
- COMMON         0x0000000020000094       0x24 Core/src/scheduler.o
-                0x0000000020000094                u8SystemCounter
-                0x0000000020000098                atTasks
-                0x00000000200000b8                . = ALIGN (0x4)
-                0x00000000200000b8                _ebss = .
-                0x00000000200000b8                __bss_end__ = _ebss
+ *fill*         0x000000002000012a        0x2 
+ COMMON         0x000000002000012c        0xa ApplicationLayer/CapSensDriver/src/CapSens.o
+                0x000000002000012c                au16SensorsValue
+ *fill*         0x0000000020000136        0x2 
+ COMMON         0x0000000020000138       0x3c ApplicationLayer/Debug/src/debug.o
+                0x0000000020000138                ai16TxBuffer
+                0x0000000020000160                au8RxBuffer
+ COMMON         0x0000000020000174       0x24 Core/src/scheduler.o
+                0x0000000020000174                u8SystemCounter
+                0x0000000020000178                atTasks
+                0x0000000020000198                . = ALIGN (0x4)
+                0x0000000020000198                _ebss = .
+                0x0000000020000198                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x00000000200000b8      0x600 load address 0x0000000008000c38
-                0x00000000200000b8                . = ALIGN (0x8)
+                0x0000000020000198      0x600 load address 0x0000000008000e14
+                0x0000000020000198                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x00000000200002b8                . = (. + _Min_Heap_Size)
- *fill*         0x00000000200000b8      0x200 
-                0x00000000200006b8                . = (. + _Min_Stack_Size)
- *fill*         0x00000000200002b8      0x400 
-                0x00000000200006b8                . = ALIGN (0x8)
+                0x0000000020000398                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000198      0x200 
+                0x0000000020000798                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000398      0x400 
+                0x0000000020000798                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -1147,96 +1229,105 @@ LOAD c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .ARM.attributes
                 0x000000000000007d       0x33 ApplicationLayer/Debug/src/debug.o
  .ARM.attributes
-                0x00000000000000b0       0x33 CMSIS/src/system_stm32f1xx.o
+                0x00000000000000b0       0x33 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
  .ARM.attributes
-                0x00000000000000e3       0x33 Core/src/TaskManager.o
+                0x00000000000000e3       0x33 CMSIS/src/system_stm32f1xx.o
  .ARM.attributes
-                0x0000000000000116       0x33 Core/src/main.o
+                0x0000000000000116       0x33 Core/src/TaskManager.o
  .ARM.attributes
-                0x0000000000000149       0x33 Core/src/scheduler.o
+                0x0000000000000149       0x33 Core/src/main.o
  .ARM.attributes
-                0x000000000000017c       0x33 Core/src/stm32f1xx_it.o
+                0x000000000000017c       0x33 Core/src/scheduler.o
  .ARM.attributes
-                0x00000000000001af       0x33 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+                0x00000000000001af       0x33 Core/src/stm32f1xx_it.o
  .ARM.attributes
-                0x00000000000001e2       0x33 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+                0x00000000000001e2       0x33 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
  .ARM.attributes
-                0x0000000000000215       0x21 Startup/startup_stm32f103xb.o
+                0x0000000000000215       0x33 LowLevelDrivers/src/stm32f1xx_ll_utils.o
  .ARM.attributes
-                0x0000000000000236       0x2d c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+                0x0000000000000248       0x21 Startup/startup_stm32f103xb.o
  .ARM.attributes
-                0x0000000000000263       0x1d c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0000000000000269       0x2d c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000000000000296       0x1d c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(SmartRC.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x5e4a
+.debug_info     0x0000000000000000     0x6665
  .debug_info    0x0000000000000000     0x1812 ApplicationLayer/CapSensDriver/src/CapSens.o
- .debug_info    0x0000000000001812     0x1bdf ApplicationLayer/Debug/src/debug.o
- .debug_info    0x00000000000033f1      0x3e8 CMSIS/src/system_stm32f1xx.o
- .debug_info    0x00000000000037d9      0xa03 Core/src/TaskManager.o
- .debug_info    0x00000000000041dc      0x393 Core/src/main.o
- .debug_info    0x000000000000456f      0x2ec Core/src/scheduler.o
- .debug_info    0x000000000000485b      0x40d Core/src/stm32f1xx_it.o
- .debug_info    0x0000000000004c68      0x7f6 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_info    0x000000000000545e      0x9ca LowLevelDrivers/src/stm32f1xx_ll_utils.o
- .debug_info    0x0000000000005e28       0x22 Startup/startup_stm32f103xb.o
+ .debug_info    0x0000000000001812     0x1bfa ApplicationLayer/Debug/src/debug.o
+ .debug_info    0x000000000000340c      0x43e ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_info    0x000000000000384a      0x3e8 CMSIS/src/system_stm32f1xx.o
+ .debug_info    0x0000000000003c32      0xdc5 Core/src/TaskManager.o
+ .debug_info    0x00000000000049f7      0x393 Core/src/main.o
+ .debug_info    0x0000000000004d8a      0x2ec Core/src/scheduler.o
+ .debug_info    0x0000000000005076      0x40d Core/src/stm32f1xx_it.o
+ .debug_info    0x0000000000005483      0x7f6 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_info    0x0000000000005c79      0x9ca LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_info    0x0000000000006643       0x22 Startup/startup_stm32f103xb.o
 
-.debug_abbrev   0x0000000000000000     0x12a6
+.debug_abbrev   0x0000000000000000     0x151b
  .debug_abbrev  0x0000000000000000      0x2e6 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_abbrev  0x00000000000002e6      0x33a ApplicationLayer/Debug/src/debug.o
- .debug_abbrev  0x0000000000000620      0x134 CMSIS/src/system_stm32f1xx.o
- .debug_abbrev  0x0000000000000754      0x1c0 Core/src/TaskManager.o
- .debug_abbrev  0x0000000000000914      0x182 Core/src/main.o
- .debug_abbrev  0x0000000000000a96      0x1ab Core/src/scheduler.o
- .debug_abbrev  0x0000000000000c41      0x165 Core/src/stm32f1xx_it.o
- .debug_abbrev  0x0000000000000da6      0x247 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_abbrev  0x0000000000000fed      0x2a7 LowLevelDrivers/src/stm32f1xx_ll_utils.o
- .debug_abbrev  0x0000000000001294       0x12 Startup/startup_stm32f103xb.o
+ .debug_abbrev  0x0000000000000620      0x1a9 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_abbrev  0x00000000000007c9      0x134 CMSIS/src/system_stm32f1xx.o
+ .debug_abbrev  0x00000000000008fd      0x28c Core/src/TaskManager.o
+ .debug_abbrev  0x0000000000000b89      0x182 Core/src/main.o
+ .debug_abbrev  0x0000000000000d0b      0x1ab Core/src/scheduler.o
+ .debug_abbrev  0x0000000000000eb6      0x165 Core/src/stm32f1xx_it.o
+ .debug_abbrev  0x000000000000101b      0x247 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_abbrev  0x0000000000001262      0x2a7 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_abbrev  0x0000000000001509       0x12 Startup/startup_stm32f103xb.o
 
-.debug_loc      0x0000000000000000     0x1d76
+.debug_loc      0x0000000000000000     0x1fb5
  .debug_loc     0x0000000000000000      0x9bd ApplicationLayer/CapSensDriver/src/CapSens.o
- .debug_loc     0x00000000000009bd      0x80a ApplicationLayer/Debug/src/debug.o
- .debug_loc     0x00000000000011c7       0xf4 CMSIS/src/system_stm32f1xx.o
- .debug_loc     0x00000000000012bb       0x6a Core/src/main.o
- .debug_loc     0x0000000000001325       0xcc Core/src/scheduler.o
- .debug_loc     0x00000000000013f1       0x90 Core/src/stm32f1xx_it.o
- .debug_loc     0x0000000000001481      0x36c LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_loc     0x00000000000017ed      0x589 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_loc     0x00000000000009bd      0x814 ApplicationLayer/Debug/src/debug.o
+ .debug_loc     0x00000000000011d1       0xaf ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_loc     0x0000000000001280       0xf4 CMSIS/src/system_stm32f1xx.o
+ .debug_loc     0x0000000000001374      0x186 Core/src/TaskManager.o
+ .debug_loc     0x00000000000014fa       0x6a Core/src/main.o
+ .debug_loc     0x0000000000001564       0xcc Core/src/scheduler.o
+ .debug_loc     0x0000000000001630       0x90 Core/src/stm32f1xx_it.o
+ .debug_loc     0x00000000000016c0      0x36c LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_loc     0x0000000000001a2c      0x589 LowLevelDrivers/src/stm32f1xx_ll_utils.o
 
-.debug_aranges  0x0000000000000000      0x260
+.debug_aranges  0x0000000000000000      0x290
  .debug_aranges
                 0x0000000000000000       0x38 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_aranges
                 0x0000000000000038       0x38 ApplicationLayer/Debug/src/debug.o
  .debug_aranges
-                0x0000000000000070       0x28 CMSIS/src/system_stm32f1xx.o
+                0x0000000000000070       0x30 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
  .debug_aranges
-                0x0000000000000098       0x40 Core/src/TaskManager.o
+                0x00000000000000a0       0x28 CMSIS/src/system_stm32f1xx.o
  .debug_aranges
-                0x00000000000000d8       0x28 Core/src/main.o
+                0x00000000000000c8       0x40 Core/src/TaskManager.o
  .debug_aranges
-                0x0000000000000100       0x38 Core/src/scheduler.o
+                0x0000000000000108       0x28 Core/src/main.o
  .debug_aranges
-                0x0000000000000138       0x80 Core/src/stm32f1xx_it.o
+                0x0000000000000130       0x38 Core/src/scheduler.o
  .debug_aranges
-                0x00000000000001b8       0x30 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+                0x0000000000000168       0x80 Core/src/stm32f1xx_it.o
  .debug_aranges
-                0x00000000000001e8       0x50 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+                0x00000000000001e8       0x30 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
  .debug_aranges
-                0x0000000000000238       0x28 Startup/startup_stm32f103xb.o
+                0x0000000000000218       0x50 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_aranges
+                0x0000000000000268       0x28 Startup/startup_stm32f103xb.o
 
-.debug_ranges   0x0000000000000000      0x300
+.debug_ranges   0x0000000000000000      0x368
  .debug_ranges  0x0000000000000000       0x58 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_ranges  0x0000000000000058       0xe8 ApplicationLayer/Debug/src/debug.o
- .debug_ranges  0x0000000000000140       0x18 CMSIS/src/system_stm32f1xx.o
- .debug_ranges  0x0000000000000158       0x30 Core/src/TaskManager.o
- .debug_ranges  0x0000000000000188       0x18 Core/src/main.o
- .debug_ranges  0x00000000000001a0       0x28 Core/src/scheduler.o
- .debug_ranges  0x00000000000001c8       0x70 Core/src/stm32f1xx_it.o
- .debug_ranges  0x0000000000000238       0x68 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_ranges  0x00000000000002a0       0x40 LowLevelDrivers/src/stm32f1xx_ll_utils.o
- .debug_ranges  0x00000000000002e0       0x20 Startup/startup_stm32f103xb.o
+ .debug_ranges  0x0000000000000140       0x38 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_ranges  0x0000000000000178       0x18 CMSIS/src/system_stm32f1xx.o
+ .debug_ranges  0x0000000000000190       0x60 Core/src/TaskManager.o
+ .debug_ranges  0x00000000000001f0       0x18 Core/src/main.o
+ .debug_ranges  0x0000000000000208       0x28 Core/src/scheduler.o
+ .debug_ranges  0x0000000000000230       0x70 Core/src/stm32f1xx_it.o
+ .debug_ranges  0x00000000000002a0       0x68 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_ranges  0x0000000000000308       0x40 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_ranges  0x0000000000000348       0x20 Startup/startup_stm32f103xb.o
 
-.debug_macro    0x0000000000000000    0x12a30
+.debug_macro    0x0000000000000000    0x12bae
  .debug_macro   0x0000000000000000      0x13e ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_macro   0x000000000000013e      0xa66 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_macro   0x0000000000000ba4       0x2e ApplicationLayer/CapSensDriver/src/CapSens.o
@@ -1263,73 +1354,80 @@ OUTPUT(SmartRC.elf elf32-littlearm)
  .debug_macro   0x000000000001086e       0x16 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_macro   0x0000000000010884      0x8a1 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_macro   0x0000000000011125      0x17e ApplicationLayer/CapSensDriver/src/CapSens.o
- .debug_macro   0x00000000000112a3      0x20e ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000114b1      0x1b4 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011665       0x46 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000116ab       0x18 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000116c3       0x3c ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000116ff       0x34 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011733      0x174 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000118a7       0x52 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x00000000000118f9       0x1f ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011918       0x43 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x000000000001195b       0x20 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x000000000001197b      0x1a3 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011b1e      0x32a ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011e48       0x10 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011e58       0x35 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011e8d       0x20 ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011ead       0x6a ApplicationLayer/Debug/src/debug.o
- .debug_macro   0x0000000000011f17       0xce CMSIS/src/system_stm32f1xx.o
- .debug_macro   0x0000000000011fe5      0x22b Core/src/TaskManager.o
- .debug_macro   0x0000000000012210       0x1c Core/src/TaskManager.o
- .debug_macro   0x000000000001222c      0x12b Core/src/main.o
- .debug_macro   0x0000000000012357       0xe4 Core/src/scheduler.o
- .debug_macro   0x000000000001243b       0x6e Core/src/scheduler.o
- .debug_macro   0x00000000000124a9       0x16 Core/src/scheduler.o
- .debug_macro   0x00000000000124bf      0x122 Core/src/stm32f1xx_it.o
- .debug_macro   0x00000000000125e1       0xf8 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_macro   0x00000000000126d9      0x224 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_macro   0x00000000000128fd      0x133 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_macro   0x00000000000112a3      0x218 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x00000000000114bb      0x1b4 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x000000000001166f       0x46 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x00000000000116b5       0x18 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x00000000000116cd       0x3c ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011709       0x34 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x000000000001173d      0x174 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x00000000000118b1       0x52 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011903       0x1f ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011922       0x43 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011965       0x20 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011985      0x1a3 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011b28      0x32a ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011e52       0x10 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011e62       0x35 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011e97       0x20 ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011eb7       0x6a ApplicationLayer/Debug/src/debug.o
+ .debug_macro   0x0000000000011f21      0x13b ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x000000000001205c       0x10 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_macro   0x000000000001206c       0xce CMSIS/src/system_stm32f1xx.o
+ .debug_macro   0x000000000001213a      0x23e Core/src/TaskManager.o
+ .debug_macro   0x0000000000012378       0x1c Core/src/TaskManager.o
+ .debug_macro   0x0000000000012394       0x16 Core/src/TaskManager.o
+ .debug_macro   0x00000000000123aa      0x12b Core/src/main.o
+ .debug_macro   0x00000000000124d5       0xe4 Core/src/scheduler.o
+ .debug_macro   0x00000000000125b9       0x6e Core/src/scheduler.o
+ .debug_macro   0x0000000000012627       0x16 Core/src/scheduler.o
+ .debug_macro   0x000000000001263d      0x122 Core/src/stm32f1xx_it.o
+ .debug_macro   0x000000000001275f       0xf8 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_macro   0x0000000000012857      0x224 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_macro   0x0000000000012a7b      0x133 LowLevelDrivers/src/stm32f1xx_ll_utils.o
 
-.debug_line     0x0000000000000000     0x37c9
+.debug_line     0x0000000000000000     0x3ec7
  .debug_line    0x0000000000000000      0x7bc ApplicationLayer/CapSensDriver/src/CapSens.o
- .debug_line    0x00000000000007bc      0x86a ApplicationLayer/Debug/src/debug.o
- .debug_line    0x0000000000001026      0x458 CMSIS/src/system_stm32f1xx.o
- .debug_line    0x000000000000147e      0x74c Core/src/TaskManager.o
- .debug_line    0x0000000000001bca      0x533 Core/src/main.o
- .debug_line    0x00000000000020fd      0x4c4 Core/src/scheduler.o
- .debug_line    0x00000000000025c1      0x612 Core/src/stm32f1xx_it.o
- .debug_line    0x0000000000002bd3      0x577 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_line    0x000000000000314a      0x602 LowLevelDrivers/src/stm32f1xx_ll_utils.o
- .debug_line    0x000000000000374c       0x7d Startup/startup_stm32f103xb.o
+ .debug_line    0x00000000000007bc      0x8ad ApplicationLayer/Debug/src/debug.o
+ .debug_line    0x0000000000001069      0x604 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_line    0x000000000000166d      0x458 CMSIS/src/system_stm32f1xx.o
+ .debug_line    0x0000000000001ac5      0x803 Core/src/TaskManager.o
+ .debug_line    0x00000000000022c8      0x533 Core/src/main.o
+ .debug_line    0x00000000000027fb      0x4c4 Core/src/scheduler.o
+ .debug_line    0x0000000000002cbf      0x612 Core/src/stm32f1xx_it.o
+ .debug_line    0x00000000000032d1      0x577 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_line    0x0000000000003848      0x602 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_line    0x0000000000003e4a       0x7d Startup/startup_stm32f103xb.o
 
-.debug_str      0x0000000000000000    0x64496
+.debug_str      0x0000000000000000    0x6471e
  .debug_str     0x0000000000000000    0x5ec32 ApplicationLayer/CapSensDriver/src/CapSens.o
                                       0x5efb6 (size before relaxing)
- .debug_str     0x000000000005ec32     0x44d6 ApplicationLayer/Debug/src/debug.o
-                                      0x5caaf (size before relaxing)
- .debug_str     0x0000000000063108       0x75 CMSIS/src/system_stm32f1xx.o
+ .debug_str     0x000000000005ec32     0x4535 ApplicationLayer/Debug/src/debug.o
+                                      0x5cafb (size before relaxing)
+ .debug_str     0x0000000000063167      0x20f ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+                                      0x581e7 (size before relaxing)
+ .debug_str     0x0000000000063376       0x75 CMSIS/src/system_stm32f1xx.o
                                       0x54297 (size before relaxing)
- .debug_str     0x000000000006317d       0xe8 Core/src/TaskManager.o
-                                      0x62b2c (size before relaxing)
- .debug_str     0x0000000000063265       0xd8 Core/src/main.o
+ .debug_str     0x00000000000633eb      0x102 Core/src/TaskManager.o
+                                      0x62cc0 (size before relaxing)
+ .debug_str     0x00000000000634ed       0xd8 Core/src/main.o
                                       0x58103 (size before relaxing)
- .debug_str     0x000000000006333d       0xcd Core/src/scheduler.o
+ .debug_str     0x00000000000635c5       0xcd Core/src/scheduler.o
                                       0x546ac (size before relaxing)
- .debug_str     0x000000000006340a      0x17d Core/src/stm32f1xx_it.o
+ .debug_str     0x0000000000063692      0x17d Core/src/stm32f1xx_it.o
                                       0x58175 (size before relaxing)
- .debug_str     0x0000000000063587      0x3bc LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_str     0x000000000006380f      0x3bc LowLevelDrivers/src/stm32f1xx_ll_gpio.o
                                       0x55b58 (size before relaxing)
- .debug_str     0x0000000000063943      0xb24 LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_str     0x0000000000063bcb      0xb24 LowLevelDrivers/src/stm32f1xx_ll_utils.o
                                       0x56399 (size before relaxing)
- .debug_str     0x0000000000064467       0x2f Startup/startup_stm32f103xb.o
+ .debug_str     0x00000000000646ef       0x2f Startup/startup_stm32f103xb.o
                                          0x5a (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b ApplicationLayer/CapSensDriver/src/CapSens.o
                                          0x7c (size before relaxing)
  .comment       0x000000000000007b       0x7c ApplicationLayer/Debug/src/debug.o
+ .comment       0x000000000000007b       0x7c ApplicationLayer/SensorProcessing/src/SensorProcessing.o
  .comment       0x000000000000007b       0x7c CMSIS/src/system_stm32f1xx.o
  .comment       0x000000000000007b       0x7c Core/src/TaskManager.o
  .comment       0x000000000000007b       0x7c Core/src/main.o
@@ -1338,14 +1436,15 @@ OUTPUT(SmartRC.elf elf32-littlearm)
  .comment       0x000000000000007b       0x7c LowLevelDrivers/src/stm32f1xx_ll_gpio.o
  .comment       0x000000000000007b       0x7c LowLevelDrivers/src/stm32f1xx_ll_utils.o
 
-.debug_frame    0x0000000000000000      0x46c
+.debug_frame    0x0000000000000000      0x4c4
  .debug_frame   0x0000000000000000       0x78 ApplicationLayer/CapSensDriver/src/CapSens.o
  .debug_frame   0x0000000000000078       0x70 ApplicationLayer/Debug/src/debug.o
- .debug_frame   0x00000000000000e8       0x30 CMSIS/src/system_stm32f1xx.o
- .debug_frame   0x0000000000000118       0x70 Core/src/TaskManager.o
- .debug_frame   0x0000000000000188       0x40 Core/src/main.o
- .debug_frame   0x00000000000001c8       0x74 Core/src/scheduler.o
- .debug_frame   0x000000000000023c      0x100 Core/src/stm32f1xx_it.o
- .debug_frame   0x000000000000033c       0x58 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
- .debug_frame   0x0000000000000394       0xac LowLevelDrivers/src/stm32f1xx_ll_utils.o
- .debug_frame   0x0000000000000440       0x2c c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000000000000e8       0x50 ApplicationLayer/SensorProcessing/src/SensorProcessing.o
+ .debug_frame   0x0000000000000138       0x30 CMSIS/src/system_stm32f1xx.o
+ .debug_frame   0x0000000000000168       0x78 Core/src/TaskManager.o
+ .debug_frame   0x00000000000001e0       0x40 Core/src/main.o
+ .debug_frame   0x0000000000000220       0x74 Core/src/scheduler.o
+ .debug_frame   0x0000000000000294      0x100 Core/src/stm32f1xx_it.o
+ .debug_frame   0x0000000000000394       0x58 LowLevelDrivers/src/stm32f1xx_ll_gpio.o
+ .debug_frame   0x00000000000003ec       0xac LowLevelDrivers/src/stm32f1xx_ll_utils.o
+ .debug_frame   0x0000000000000498       0x2c c:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc_nano.a(lib_a-init.o)

@@ -1,5 +1,6 @@
 "ApplicationLayer/CapSensDriver/src/CapSens.o"
 "ApplicationLayer/Debug/src/debug.o"
+"ApplicationLayer/SensorProcessing/src/SensorProcessing.o"
 "CMSIS/src/system_stm32f1xx.o"
 "Core/src/TaskManager.o"
 "Core/src/main.o"

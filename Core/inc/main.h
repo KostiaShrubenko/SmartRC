@@ -24,6 +24,9 @@
 #define NOP4	NOP2; NOP2
 #define NOP8	NOP4; NOP4
 
+#define ERROR 	(-1)
+#define SUCCESS	  0
+
 
 
 

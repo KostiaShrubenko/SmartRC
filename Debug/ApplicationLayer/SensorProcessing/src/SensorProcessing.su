@@ -1,0 +1,3 @@
+SensorProcessing.c:21:6:SensorProcessing_Routine_2ms	24	static
+SensorProcessing.c:107:6:SensorProcessing_ApiGetDeltas	0	static
+SensorProcessing.c:115:6:SensorProcessing_ApiGetAllSensorValues	0	static

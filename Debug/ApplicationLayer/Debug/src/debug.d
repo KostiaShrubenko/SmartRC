@@ -13,6 +13,7 @@ ApplicationLayer/Debug/src/debug.o: ../ApplicationLayer/Debug/src/debug.c \
  ../LowLevelDrivers/inc/stm32f1xx_ll_dma.h ../Config/Config.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_usart.h \
  ../ApplicationLayer/CapSensDriver/inc/CapSens_Api.h \
+ ../ApplicationLayer/SensorProcessing/inc/SensorProcessing_Api.h \
  ../Core/inc/callbacks.h
 
 ../ApplicationLayer/Debug/inc/debug.h:
@@ -56,5 +57,7 @@ ApplicationLayer/Debug/src/debug.o: ../ApplicationLayer/Debug/src/debug.c \
 ../LowLevelDrivers/inc/stm32f1xx_ll_usart.h:
 
 ../ApplicationLayer/CapSensDriver/inc/CapSens_Api.h:
+
+../ApplicationLayer/SensorProcessing/inc/SensorProcessing_Api.h:
 
 ../Core/inc/callbacks.h:

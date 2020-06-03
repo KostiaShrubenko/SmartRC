@@ -19,6 +19,7 @@ OBJCOPY_BIN :=
 SUBDIRS := \
 ApplicationLayer/CapSensDriver/src \
 ApplicationLayer/Debug/src \
+ApplicationLayer/SensorProcessing/src \
 CMSIS/src \
 Core/src \
 LowLevelDrivers/src \
