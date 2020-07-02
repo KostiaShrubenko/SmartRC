@@ -16,10 +16,40 @@
 #define SENSOR_4	4
 #define SENSOR_5	5
 
+
+#if DEBUG_MODE == ON
+/* --------------------------------- DEBUG API ---------------------------------- */
+/* Designed to retreat additional values.										  */
+
+void SensorProcessing_ApiGetCalibrationValues(uint16_t *pu16Destination);
+
+#endif /* DEBUG_MODE */
+
+/**
+ * @brief Retrieve delta values of each capacitive sensor.
+ *
+ * @param pi16Destination Pointer to place where to store delta values.
+ *
+ * @retval None
+ */
 void SensorProcessing_ApiGetDeltas(int16_t *pi16Destination);
 
+/**
+ * @brief Retrieve filtered values of each sensor.
+ *
+ * @param pi16Destination Pointer to place where to store filtered values.
+ */
 void SensorProcessing_ApiGetFilteredValues(int16_t *pi16Destination);
 
-int16_t SensorProcessing_ApiGetSensorValues(int16_t *pi16Destination, uint8_t u8SensorIndex);
+/**
+ * @brief Retrieve all evaluated values for one sensor.
+ *
+ * @param pi16Destination Pointer to place where to store evaluated values of sensor.
+ * @param u8SensorIndex Index of sensor whose values developer wants to retrieve.
+ *
+ * @retval Makes to know whether values retrieved or there is no possibility to do that.
+ *
+ */
+int8_t SensorProcessing_ApiGetSensorValues(int16_t *pi16Destination, uint8_t u8SensorIndex);
 
 #endif /* SENSORPROCESSING_INC_SENSORPROCESSING_API_H_ */

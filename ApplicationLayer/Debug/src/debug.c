@@ -24,7 +24,8 @@ void Debug_Routine_2ms(void)
 {
 	//CapSens_ApiGetSensorsValue(au16TxBuffer);
 	//SensorProcessing_ApiGetDeltas(ai16TxBuffer);
-	SensorProcessing_ApiGetSensorValues(ai16TxBuffer, 3);
+	SensorProcessing_ApiGetCalibrationValues((uint16_t *)ai16TxBuffer);
+	(void)SensorProcessing_ApiGetSensorValues(&ai16TxBuffer[1], 0);
 	BufferTransmit(6);
 }
 

@@ -7,32 +7,75 @@
 
 #include "SensorProcessing.h"
 
-static SensorValues_t atSensors[SENSORS_AMOUNT];
-static uint16_t au16RawValues[SENSORS_AMOUNT];
+StateMachine_t SM = {
+	.u8PreCalibrationCounter = PRE_CALIBRATION_CYCLES,
+	.u8CalibrationCounter = CALIBRATION_CYCLES,
+	.tState = precalibration
+};
 
-static uint8_t u8CalibrationCyclesCounter = CALIBRATION_CYCLES;
-static uint16_t u16Offsets[SENSORS_AMOUNT];
 
+
+#if DEBUG_MODE == ON
+/* DEBUG VARIABLES */
+
+static uint16_t au16FirstRawValues[CALIBRATION_CYCLES];
+
+#endif /* DEBUG_MODE */
+
+
+static void Calibration(void);
 static void CalculateDeltaValues(void);
 static void FilterValuesByBuffer(void);
 static void TakeDerivative(void);
 
 void SensorProcessing_Routine_2ms(void)
 {
-	CapSens_ApiGetSensorsValue(au16RawValues);
-	if (u8CalibrationCyclesCounter > 0)
-	{
-		for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
+	CapSens_ApiGetSensorsValue(SM.au16RawValues);
+	switch (SM.tState) {
+	case precalibration:
+		SM.u8PreCalibrationCounter--;
+		if (SM.u8PreCalibrationCounter == 0)
 		{
-			u16Offsets[u8SensorIndex] += au16RawValues[u8SensorIndex] / CALIBRATION_CYCLES;
+			SM.tState = calibration;
 		}
-		u8CalibrationCyclesCounter--;
-	}
-	else
-	{
+		break;
+	case calibration:
+		Calibration();
+		SM.u8CalibrationCounter--;
+		if (SM.u8CalibrationCounter == 0)
+		{
+			SM.tState = bufferfilling;
+		}
+		break;
+	case bufferfilling:
+		CalculateDeltaValues();
+		FilterValuesByBuffer();
+		break;
+	case processing:
 		CalculateDeltaValues();
 		FilterValuesByBuffer();
 		TakeDerivative();
+		break;
+	default:
+		break;
+	}
+}
+
+static void Calibration(void)
+{
+	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
+	{
+#if DEBUG_MODE == ON
+		if (u8SensorIndex == 0)
+		{
+			au16FirstRawValues[CALIBRATION_CYCLES - SM.u8CalibrationCounter] = SM.au16RawValues[u8SensorIndex];
+		}
+#endif /* DEBUG_MODE */
+		SM.u16Offsets[u8SensorIndex] += SM.au16RawValues[u8SensorIndex] * 10 / CALIBRATION_CYCLES;
+		if (SM.u8CalibrationCounter == 1)
+		{
+			SM.u16Offsets[u8SensorIndex] /= 10;
+		}
 	}
 }
 
@@ -40,7 +83,7 @@ static void CalculateDeltaValues(void)
 {
 	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
 	{
-		atSensors[u8SensorIndex].i16DeltaValue = (au16RawValues[u8SensorIndex] - u16Offsets[u8SensorIndex]) * 10;
+		SM.atSensors[u8SensorIndex].i16DeltaValue = (SM.au16RawValues[u8SensorIndex] - SM.u16Offsets[u8SensorIndex]) * 10;
 	}
 }
 
@@ -50,33 +93,31 @@ static void FilterValuesByBuffer(void)
 	static int16_t ai16FilterBuffer[SENSORS_AMOUNT][FILTER_BUFFER_SIZE];
 	static int32_t ai32BufferSum[SENSORS_AMOUNT];
 	static uint8_t u8PositionInBuffer = 0;
-	static uint8_t u8IsBufferFilled = 0;
 
 	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
 	{
-		if (u8IsBufferFilled == 0)
+		if (SM.tState == bufferfilling)
 		{
-			ai32BufferSum[u8SensorIndex] += atSensors[u8SensorIndex].i16DeltaValue;
-			ai16FilterBuffer[u8SensorIndex][u8PositionInBuffer] = atSensors[u8SensorIndex].i16DeltaValue;
+			ai32BufferSum[u8SensorIndex] += SM.atSensors[u8SensorIndex].i16DeltaValue;
+			ai16FilterBuffer[u8SensorIndex][u8PositionInBuffer] = SM.atSensors[u8SensorIndex].i16DeltaValue;
 		}
 		else
 		{
 			ai32BufferSum[u8SensorIndex] -= ai16FilterBuffer[u8SensorIndex][u8PositionInBuffer];
-			ai32BufferSum[u8SensorIndex] += atSensors[u8SensorIndex].i16DeltaValue;
-			ai16FilterBuffer[u8SensorIndex][u8PositionInBuffer] = atSensors[u8SensorIndex].i16DeltaValue;
-			atSensors[u8SensorIndex].i16FilteredValue = ai32BufferSum[u8SensorIndex] / FILTER_BUFFER_SIZE;
+			ai32BufferSum[u8SensorIndex] += SM.atSensors[u8SensorIndex].i16DeltaValue;
+			ai16FilterBuffer[u8SensorIndex][u8PositionInBuffer] = SM.atSensors[u8SensorIndex].i16DeltaValue;
+			SM.atSensors[u8SensorIndex].i16FilteredValue = ai32BufferSum[u8SensorIndex] / FILTER_BUFFER_SIZE;
 		}
 	}
 	u8PositionInBuffer++;
 	if (u8PositionInBuffer == FILTER_BUFFER_SIZE)
 	{
-		if (u8IsBufferFilled == 0)
+		if (SM.tState == bufferfilling)
 		{
-			u8IsBufferFilled = 1;
+			SM.tState = processing;
 		}
 		u8PositionInBuffer = 0;
 	}
-
 }
 
 static void TakeDerivative(void)
@@ -84,17 +125,30 @@ static void TakeDerivative(void)
 	static int16_t LastFilteredValues[SENSORS_AMOUNT];
 	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
 	{
-		atSensors[u8SensorIndex].i16DerivativeValue = (atSensors[u8SensorIndex].i16FilteredValue - LastFilteredValues[u8SensorIndex]) * 10;
-		LastFilteredValues[u8SensorIndex] = atSensors[u8SensorIndex].i16FilteredValue;
+		SM.atSensors[u8SensorIndex].i16DerivativeValue = (SM.atSensors[u8SensorIndex].i16FilteredValue - LastFilteredValues[u8SensorIndex]) * 10;
+		LastFilteredValues[u8SensorIndex] = SM.atSensors[u8SensorIndex].i16FilteredValue;
 	}
 }
 
+/* Debug API */
+#if DEBUG_MODE == ON
+void SensorProcessing_ApiGetCalibrationValues(uint16_t *pu16Destination)
+{
+	static uint8_t i = 0;
+	pu16Destination[0] = au16FirstRawValues[i];
+	i++;
+	if (i == CALIBRATION_CYCLES)
+	{
+		i = 0;
+	}
+}
+#endif /* DEBUG_MODE */
 
 void SensorProcessing_ApiGetDeltas(int16_t *pi16Destination)
 {
 	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
 	{
-		pi16Destination[u8SensorIndex] = atSensors[u8SensorIndex].i16DeltaValue;
+		pi16Destination[u8SensorIndex] = SM.atSensors[u8SensorIndex].i16DeltaValue;
 	}
 }
 
@@ -102,22 +156,16 @@ void SensorProcessing_ApiGetFilteredValues(int16_t *pi16Destination)
 {
 	for (uint8_t u8SensorIndex = 0; u8SensorIndex < SENSORS_AMOUNT; u8SensorIndex++)
 	{
-		pi16Destination[u8SensorIndex] = atSensors[u8SensorIndex].i16FilteredValue;
+		pi16Destination[u8SensorIndex] = SM.atSensors[u8SensorIndex].i16FilteredValue;
 	}
 }
 
-
-int8_t SensorProcessing_ApiGetSensorValues(SensorValues_t *ptDestination, uint8_t u8SensorIndex)
+int8_t SensorProcessing_ApiGetSensorValues(int16_t *pi16Destination, uint8_t u8SensorIndex)
 {
-	int8_t i8ReturnValue = 0;
-	if (u8SensorIndex >= SENSORS_AMOUNT)
-	{
-		i8ReturnValue = ERROR;
-	}
-	else
-	{
-		pi16Destination = &atSensors[u8SensorIndex];
-		i8ReturnValue = SUCCESS;
-	}
-	return i8ReturnValue;
+	pi16Destination[0] = SM.au16RawValues[u8SensorIndex];
+	pi16Destination[1] = SM.atSensors[u8SensorIndex].i16DeltaValue;
+	pi16Destination[2] = SM.atSensors[u8SensorIndex].i16FilteredValue;
+	pi16Destination[3] = SM.atSensors[u8SensorIndex].i16DerivativeValue;
+
+	return 0;
 }

@@ -16,19 +16,18 @@
 void vTask_Init(void)
 {
 	CapSens_InitRoutine();
+#if DEBUG_MODE == ON
 	Debug_Init();
-	LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOC);
-	LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_13, LL_GPIO_MODE_OUTPUT);
-	LL_GPIO_SetPinOutputType(GPIOC, LL_GPIO_PIN_13, LL_GPIO_OUTPUT_PUSHPULL);
+#endif /* DEBUG_MODE */
 }
 
 void vTask_2ms(void)
 {
 	CapSens_ChargeRoutine_2ms();
-	LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_13);
 	SensorProcessing_Routine_2ms();
-	LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_13);
+#if DEBUG_MODE == ON
 	Debug_Routine_2ms();
+#endif /* DEBUG_MODE*/
 }
 
 void vTask_10ms_0(void)
@@ -43,5 +42,4 @@ void vTask_10ms_1(void)
 
 void vTask_20ms(void)
 {
-
 }

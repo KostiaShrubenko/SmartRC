@@ -45,7 +45,12 @@
 #define BOTTOM_PORT	GPIOB
 
 /* Represent masks for setting high level on included pins by ODR register.					*/
-#define TOP_HIGH_LEVEL 		((1 << PIN2) | (1 << PIN3) | (1 << PIN4) |\
+#define TOP_PINS_MASK		((1 << PIN3) | (1 << PIN4) |\
+							 (1 << PIN5) | (1 << PIN6) | (1 << PIN7))
+#define BOTTOM_PINS_MASK	((1 << PIN0) | (1 << PIN1) | (1 << PIN2) |\
+							 (1 << PIN10) | (1 << PIN11) | (1 << PIN12))
+
+#define TOP_HIGH_LEVEL 		((1 << PIN3) | (1 << PIN4) |\
 							 (1 << PIN5) | (1 << PIN6) | (1 << PIN7))
 #define TOP_LOW_LEVEL  		0U
 #define BOTTOM_LOW_LEVEL 	0U

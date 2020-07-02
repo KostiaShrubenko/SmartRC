@@ -51,14 +51,14 @@ void CapSens_ChargeRoutine_2ms(void)
 		MODIFY_REG(BOTTOM_PORT->CRH, BOTTOM_CRH_MASK, BOTTOM_CRH_MODE_FLOAT);
 
 		MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_OUTPUT);
-		LL_GPIO_WriteOutputPort(TOP_PORT, TOP_HIGH_LEVEL);
+		MODIFY_REG(TOP_PORT->ODR, TOP_PINS_MASK, TOP_HIGH_LEVEL); /* Set High Level to Top pins */
 
 
 		MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_FLOAT);
 
 		MODIFY_REG(BOTTOM_PORT->CRL, BOTTOM_CRL_MASK, BOTTOM_CRL_MODE_OUTPUT);
 		MODIFY_REG(BOTTOM_PORT->CRH, BOTTOM_CRH_MASK, BOTTOM_CRH_MODE_OUTPUT);
-		LL_GPIO_WriteOutputPort(BOTTOM_PORT, BOTTOM_LOW_LEVEL);
+		MODIFY_REG(BOTTOM_PORT->ODR, BOTTOM_PINS_MASK, BOTTOM_LOW_LEVEL); /* Set Low Level to Bottom pins */
 	}
 	MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_ANALOG);
 	NOP4;
@@ -69,7 +69,7 @@ void CapSens_ChargeRoutine_2ms(void)
 	}
 	u8DMA_ADCtransferStatus = DMA_NO_TRANSFER;
 	MODIFY_REG(TOP_PORT->CRL, TOP_CRL_MASK, TOP_MODE_OUTPUT);
-	LL_GPIO_WriteOutputPort(TOP_PORT, TOP_LOW_LEVEL);
+	MODIFY_REG(TOP_PORT->ODR, TOP_PINS_MASK, TOP_LOW_LEVEL); /* Set Low Level to Top pins */
 }
 
 void CapSens_ApiGetSensorsValue(uint16_t *pu16Destination)
@@ -82,13 +82,13 @@ void CapSens_ApiGetSensorsValue(uint16_t *pu16Destination)
 
 static void DMA_Init(void)
 {
-	/*## Configuration of NVIC #################################################*/
-	/* Configure NVIC to enable DMA interruptions */
+	/* Configuration of NVIC 							*/
+	/* Configure NVIC to enable DMA interruptions		*/
 	NVIC_SetPriority(DMA1_Channel1_IRQn, NVIC_CAP_DMA_PRIORITY);  /* DMA IRQ lower priority than ADC IRQ */
 	NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 
-	/*## Configuration of DMA ##################################################*/
-	/* Enable the peripheral clock of DMA */
+	/* Configuration of DMA 				*/
+	/* Enable the peripheral clock of DMA   */
 	LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_DMA1);
 
 	/* Configure the DMA transfer */
@@ -125,11 +125,8 @@ static void DMA_Init(void)
 	/* Enable DMA transfer interruption: transfer complete */
 	LL_DMA_EnableIT_TC(DMA1, DMA_CHANNEL_ADC);
 
-	/* Enable DMA transfer interruption: transfer error */
-//	LL_DMA_EnableIT_TE(DMA1,
-//						DMA_CHANNEL_ADC);
-	/*## Activation of DMA #####################################################*/
-	/* Enable the DMA transfer */
+	/* Activation of DMA 						*/
+	/* Enable the DMA transfer 					*/
 	LL_DMA_EnableChannel(DMA1, DMA_CHANNEL_ADC);
 }
 
@@ -166,8 +163,8 @@ static void ADC_Init(void)
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_6, LL_ADC_SAMPLINGTIME_41CYCLES_5);
     LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_7, LL_ADC_SAMPLINGTIME_41CYCLES_5);
 
-  /*## Configuration of ADC interruptions ####################################*/
-  /* Enable interruption ADC group regular end of sequence conversions */
+  /* Configuration of ADC interruptions									*/
+  /* Enable interruption ADC group regular end of sequence conversions  */
   LL_ADC_EnableIT_EOS(ADC1);
 }
 
