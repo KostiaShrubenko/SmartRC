@@ -1,7 +1,9 @@
-SensorProcessing.c:82:13:CalculateDeltaValues	4	static
-SensorProcessing.c:91:13:FilterValuesByBuffer	16	static
-SensorProcessing.c:31:6:SensorProcessing_Routine_2ms	32	static
-SensorProcessing.c:135:6:SensorProcessing_ApiGetCalibrationValues	0	static
-SensorProcessing.c:147:6:SensorProcessing_ApiGetDeltas	0	static
-SensorProcessing.c:155:6:SensorProcessing_ApiGetFilteredValues	0	static
-SensorProcessing.c:163:8:SensorProcessing_ApiGetSensorValues	8	static
+SensorProcessing.c:172:13:CalculateDeltaValues	4	static
+SensorProcessing.c:180:13:FilterValuesByBuffer	16	static
+SensorProcessing.c:113:16:Calibration	32	static
+SensorProcessing.c:35:6:SensorProcessing_Routine_2ms	40	static
+SensorProcessing.c:286:6:SensorProcessing_ApiGetCalibrationValues	0	static
+SensorProcessing.c:298:6:SensorProcessing_ApiGetDeltas	0	static
+SensorProcessing.c:306:6:SensorProcessing_ApiGetFilteredValues	0	static
+SensorProcessing.c:314:6:SensorProcessing_ApiGetSensorsState	0	static
+SensorProcessing.c:332:8:SensorProcessing_ApiGetSensorValues	0	static

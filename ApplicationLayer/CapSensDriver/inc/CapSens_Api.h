@@ -14,6 +14,6 @@
  * @param 	pu16Destination Pointer to desired place to store sensors' value.
  * @retval 	None
  */
-void CapSens_ApiGetSensorsValue(uint32_t *pu16Destination);
+void CapSens_ApiGetSensorsValue(uint16_t *pu16Destination);
 
 #endif /* CAPSENSDRIVER_INC_CAPSENS_API_H_ */

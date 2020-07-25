@@ -17,6 +17,7 @@
 #include "stm32f1xx_ll_utils.h"
 #include "stm32f1xx_ll_gpio.h"
 #include "stm32f1xx_it.h"
+#include "string.h"
 #include "Config.h"
 
 
@@ -24,8 +25,17 @@
 #define NOP4	NOP2; NOP2
 #define NOP8	NOP4; NOP4
 
-#define ERROR 	(-1)
-#define SUCCESS	  0
+#define ERROR	0
+#define SUCCESS	1
+
+#define YES		1
+#define NO		0
+
+#define TRUE	1
+#define FALSE	0
+
+#define FINISHED 	1
+#define IN_PROGRESS	0
 
 
 

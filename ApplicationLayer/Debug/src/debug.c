@@ -9,6 +9,7 @@
 
 int16_t ai16TxBuffer[TX_BUFFER_SIZE];
 uint8_t au8RxBuffer[RX_BUFFER_SIZE];
+SensorProcessing_SensorValues_t *ptSensorValues;
 
 static void USART_Init(void);
 static void DMA_Init(void);
@@ -22,10 +23,12 @@ void Debug_Init(void)
 
 void Debug_Routine_2ms(void)
 {
-	//CapSens_ApiGetSensorsValue(au16TxBuffer);
-	//SensorProcessing_ApiGetDeltas(ai16TxBuffer);
-	SensorProcessing_ApiGetCalibrationValues((uint16_t *)ai16TxBuffer);
-	(void)SensorProcessing_ApiGetSensorValues(&ai16TxBuffer[1], 0);
+	//(void)SensorProcessing_ApiGetSensorValues(&ai16TxBuffer[0], 0);
+	(void)SensorProcessing_ApiGetSensorValues(&ptSensorValues, 0);
+	ai16TxBuffer[0] = ptSensorValues->i16FilteredValue;
+	ai16TxBuffer[1] = ptSensorValues->i16DerivativeValue * 10;
+	//ai16TxBuffer[2] = (int16_t)(ptSensorValues->tState) * 1000;
+	ai16TxBuffer[2] = ptSensorValues->i16DeltaValue;
 	BufferTransmit(6);
 }
 

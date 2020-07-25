@@ -8,13 +8,14 @@
 #ifndef SENSORPROCESSING_INC_SENSORPROCESSING_API_H_
 #define SENSORPROCESSING_INC_SENSORPROCESSING_API_H_
 
+#include "SensorProcessing_Datatypes.h"
+
 #define ALL_SENSORS 0
 #define SENSOR_0	0
 #define SENSOR_1	1
 #define SENSOR_2	2
 #define SENSOR_3	3
 #define SENSOR_4	4
-#define SENSOR_5	5
 
 
 #if DEBUG_MODE == ON
@@ -50,6 +51,6 @@ void SensorProcessing_ApiGetFilteredValues(int16_t *pi16Destination);
  * @retval Makes to know whether values retrieved or there is no possibility to do that.
  *
  */
-int8_t SensorProcessing_ApiGetSensorValues(int16_t *pi16Destination, uint8_t u8SensorIndex);
+int8_t SensorProcessing_ApiGetSensorValues(SensorProcessing_SensorValues_t **ptDestination, uint8_t u8SensorIndex);
 
 #endif /* SENSORPROCESSING_INC_SENSORPROCESSING_API_H_ */
