@@ -15,6 +15,7 @@ RM := rm -rf
 -include ApplicationLayer/SensorProcessing/src/subdir.mk
 -include ApplicationLayer/Debug/src/subdir.mk
 -include ApplicationLayer/CapSensDriver/src/subdir.mk
+-include ApplicationLayer/Accelerometer/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 

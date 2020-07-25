@@ -1,0 +1,2 @@
+LIS3DH.c:14:6:LIS3DH_Init	0	static
+LIS3DH.c:19:6:LIS3DH_Routine_2ms	0	static

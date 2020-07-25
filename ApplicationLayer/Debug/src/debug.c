@@ -11,12 +11,17 @@ int16_t ai16TxBuffer[TX_BUFFER_SIZE];
 uint8_t au8RxBuffer[RX_BUFFER_SIZE];
 SensorProcessing_SensorValues_t *ptSensorValues;
 
+static void LED_Init(void);
 static void USART_Init(void);
 static void DMA_Init(void);
 static void BufferTransmit(uint8_t u8BufferLength);
 
 void Debug_Init(void)
 {
+
+#if DEBUG_LED_INDICATION == ON
+	LED_Init();
+#endif
 	USART_Init();
 	DMA_Init();
 }
@@ -30,6 +35,16 @@ void Debug_Routine_2ms(void)
 	//ai16TxBuffer[2] = (int16_t)(ptSensorValues->tState) * 1000;
 	ai16TxBuffer[2] = ptSensorValues->i16DeltaValue;
 	BufferTransmit(6);
+}
+
+static void LED_Init(void)
+{
+	LL_GPIO_SetPinMode(LED_PORT, LED_PIN, LL_GPIO_MODE_OUTPUT);
+	LL_GPIO_SetPinSpeed(LED_PORT, LED_PIN, LL_GPIO_SPEED_FREQ_LOW);
+	LL_GPIO_SetPinOutputType(LED_PORT, LED_PIN, LL_GPIO_OUTPUT_PUSHPULL);
+	LL_GPIO_SetPinPull(LED_PORT, LED_PIN, LL_GPIO_PULL_UP);
+
+	LED_CLK_ENABLE();
 }
 
 static void USART_Init(void)

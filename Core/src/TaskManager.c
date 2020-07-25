@@ -9,8 +9,10 @@
 #include "scheduler.h"
 
 #include "debug.h"
+#include "debug_Api.h"
 #include "CapSens.h"
 #include "SensorProcessing.h"
+
 
 
 void vTask_Init(void)
@@ -23,11 +25,13 @@ void vTask_Init(void)
 
 void vTask_2ms(void)
 {
+	//Debug_ApiSetLED();
 	CapSens_ChargeRoutine_2ms();
 	SensorProcessing_Routine_2ms();
 #if DEBUG_MODE == ON
 	Debug_Routine_2ms();
 #endif /* DEBUG_MODE*/
+	//Debug_ApiResetLED();
 }
 
 void vTask_10ms_0(void)

@@ -15,6 +15,11 @@
 #include "SensorProcessing_Api.h"
 #include "string.h"
 
+
+#define LED_CLK_ENABLE()			LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_GPIOA)
+#define LED_PIN						LL_GPIO_PIN_1
+#define LED_PORT					GPIOA
+
 #define USART_DEBUG_INSTANCE         USART1
 #define USART_CLK_ENABLE()           LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_USART1)
 
@@ -40,6 +45,7 @@
 
 #define TX_BUFFER_SIZE 20U
 #define RX_BUFFER_SIZE 20U
+
 
 void Debug_Init(void);
 

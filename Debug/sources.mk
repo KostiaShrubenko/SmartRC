@@ -17,6 +17,7 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+ApplicationLayer/Accelerometer/src \
 ApplicationLayer/CapSensDriver/src \
 ApplicationLayer/Debug/src \
 ApplicationLayer/SensorProcessing/src \

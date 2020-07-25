@@ -21,6 +21,7 @@
 
 
 #define DEBUG_MODE	ON
+#define DEBUG_LED_INDICATION ON
 #define DEBUG_LOG_RAW_VALUES ON
 
 

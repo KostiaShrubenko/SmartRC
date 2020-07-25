@@ -16,6 +16,8 @@ Core/src/TaskManager.o: ../Core/src/TaskManager.c ../Core/inc/main.h \
  ../ApplicationLayer/SensorProcessing/inc/SensorProcessing_Api.h \
  ../ApplicationLayer/SensorProcessing/inc/SensorProcessing_Datatypes.h \
  ../ApplicationLayer/SensorProcessing/inc/SensorProcessing.h \
+ ../ApplicationLayer/Debug/inc/debug_Api.h \
+ ../ApplicationLayer/Debug/inc/debug.h \
  ../ApplicationLayer/CapSensDriver/inc/CapSens.h \
  ../LowLevelDrivers/inc/stm32f1xx_ll_adc.h \
  ../ApplicationLayer/SensorProcessing/inc/SensorProcessing.h
@@ -69,6 +71,10 @@ Core/src/TaskManager.o: ../Core/src/TaskManager.c ../Core/inc/main.h \
 ../ApplicationLayer/SensorProcessing/inc/SensorProcessing_Datatypes.h:
 
 ../ApplicationLayer/SensorProcessing/inc/SensorProcessing.h:
+
+../ApplicationLayer/Debug/inc/debug_Api.h:
+
+../ApplicationLayer/Debug/inc/debug.h:
 
 ../ApplicationLayer/CapSensDriver/inc/CapSens.h:
 

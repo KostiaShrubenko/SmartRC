@@ -1,3 +1,4 @@
+"ApplicationLayer/Accelerometer/src/LIS3DH.o"
 "ApplicationLayer/CapSensDriver/src/CapSens.o"
 "ApplicationLayer/Debug/src/debug.o"
 "ApplicationLayer/SensorProcessing/src/SensorProcessing.o"
